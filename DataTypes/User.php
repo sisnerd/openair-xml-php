@@ -4,7 +4,7 @@ use OpenAir\Base\BaseCommandClass;
 
 class User extends BaseCommandClass
 {
-
+ 
     private $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
