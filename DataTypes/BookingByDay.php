@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class BookingByDay extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class BookingByDay extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'date' => null, //The date of the booking.
 		'booking_id' => null, //The ID of the associated booking.

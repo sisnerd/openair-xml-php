@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Notes extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Notes extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'name' => null, //Name.
 		'user_id' => null, //ID of the user.
 		'setting' => null, //Setting information.

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class ProjectAssignmentProfile extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class ProjectAssignmentProfile extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique project_assignment_profile id. Automatically
 		'created' => null, //Time the record was created
 		'user_filter' => null, //A user filter list. The

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Ccrate extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Ccrate extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'categoryid' => null, //The ID of the category this rate is associated
 		'currency' => null, //The currency these rates are quoted in.

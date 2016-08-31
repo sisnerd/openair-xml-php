@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class FormPermissionField extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class FormPermissionField extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'form_name' => null, //Internal GUI form name.
 		'field_name' => null, //Internal GUI field name.
 		'readonly' => null, //A 1/0 field indicating whether this is to be readonly

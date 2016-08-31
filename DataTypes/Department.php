@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Department extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Department extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'userid' => null, //The user ID of the head of the department.

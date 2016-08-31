@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Slipstage extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Slipstage extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'exclude_from_invoicing' => null, //Exclude slips of this stage from

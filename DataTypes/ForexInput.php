@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class ForexInput extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class ForexInput extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'symbol' => null, //Currency symbol. Must be for one of the multiple
 		'startdate' => null, //Optional start date for currency being set.
 		'enddate' => null, //Optional end date for currency being set.

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class BookingType extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class BookingType extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'priority' => null, //The priority of the booking type (1 - 9).
 		'created' => null, //Time the record was created.

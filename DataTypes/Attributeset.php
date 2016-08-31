@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Attributeset extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Attributeset extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'name' => null, //The name of the attributeset.
 		'updated' => null, //Time the record was last modified.

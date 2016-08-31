@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class InvoiceLayout extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class InvoiceLayout extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'name' => null, //Name The name used for display in popups and lists.
 		'created' => null, //Created Time the record was created.

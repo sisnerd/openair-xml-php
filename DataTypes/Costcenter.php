@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Costcenter extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Costcenter extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'notes' => null, //Cost center notes.

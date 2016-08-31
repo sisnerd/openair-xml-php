@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class BudgetAllocation extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class BudgetAllocation extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'budgetid' => null, //The ID of the associated budget.
 		'userid' => null, //The ID of the associated user.

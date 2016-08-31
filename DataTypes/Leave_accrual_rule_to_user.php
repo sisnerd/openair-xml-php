@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Leave_accrual_rule_to_user extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Leave_accrual_rule_to_user extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'userid' => null, //The id of the associated user.

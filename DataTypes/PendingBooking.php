@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class PendingBooking extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class PendingBooking extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'userid' => null, //The ID of the associated user.
 		'startdate' => null, //The start date of the booking.
 		'repeatid' => null, //The ID of the associated repeating event.

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class ResourceRequest extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class ResourceRequest extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'number' => null, //The resource request tracking number.
 		'status' => null, //The status of the resource request:

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Estimatephase extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Estimatephase extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'estimateid' => null, //The ID of the associated estimate.

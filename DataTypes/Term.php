@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Term extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Term extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'name' => null, //The name for the term.
 		'display' => null, //Display the term as.
     ];

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Attribute extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Attribute extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'name' => null, //The name of the attribute.
 		'attribute_setid' => null, //The name of the attribute.

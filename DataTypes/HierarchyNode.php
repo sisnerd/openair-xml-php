@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class HierarchyNode extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class HierarchyNode extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'hierarchyid' => null, //The ID of the associated hierarchy.
 		'levelid' => null, //The id of the associated hierarchy level.

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class BillingSplit extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class BillingSplit extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'splipid' => null, //The id of the slip that was created.
 		'project_billing_transactionid' => null, //The ID of the associated

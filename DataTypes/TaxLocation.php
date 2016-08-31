@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class TaxLocation extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class TaxLocation extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'hst_rate' => null, //The HST rate. This is used instead of GST and PST in

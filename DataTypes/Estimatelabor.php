@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Estimatelabor extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Estimatelabor extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'estimateid' => null, //The ID of the associated estimate.
 		'loaded_cost' => null, //The loaded cost for the associated resource.

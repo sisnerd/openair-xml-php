@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Currency extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Currency extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'rate' => null, //The account's custom conversion rate.
 		'created' => null, //Time the record was created.
 		'symbol' => null, //The currency symbol.

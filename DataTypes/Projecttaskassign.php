@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Projecttaskassign extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Projecttaskassign extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'userid' => null, //The ID of the user assigned to this task.

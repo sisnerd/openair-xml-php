@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Resourceprofile extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Resourceprofile extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'userid' => null, //The ID of the user for which this resourceprofile

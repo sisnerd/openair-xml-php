@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Date extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Date extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'year' => null, //Year.
 		'month' => null, //Month.
 		'day' => null, //Day.

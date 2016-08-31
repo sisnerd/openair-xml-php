@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class ResourceRequestQueue extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class ResourceRequestQueue extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'date_end' => null, //The ending date of the resource request queue.
 		'status' => null, //The status of the resource request queue:
 		'name' => null, //The name of the resource request queue.

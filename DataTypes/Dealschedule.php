@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Dealschedule extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Dealschedule extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'amount' => null, //The amount this portion of the deal is worth (in the

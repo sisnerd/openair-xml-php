@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class ItemToUserLocation extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class ItemToUserLocation extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'itemid' => null, //The ID of the associated item.
 		'tax_locationid' => null, //The ID of the associated tax location.

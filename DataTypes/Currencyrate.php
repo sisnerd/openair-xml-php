@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Currencyrate extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Currencyrate extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'crate' => null, //The account's currency conversion rate.
 		'csymbol' => null, //The currency symbol.
 		'cname' => null, //The name of the currency rate.

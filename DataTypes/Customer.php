@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Customer extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Customer extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'addr' => null, //The customer's address.
 		'invoice_layoutid' => null, //The ID of the associated invoice layout.

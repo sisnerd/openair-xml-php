@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class TagGroup extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class TagGroup extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'active' => null, //A 1/0 field indicating whether the record is active.

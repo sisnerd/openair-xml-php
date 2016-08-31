@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class preferred extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class preferred extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 
     ];
 

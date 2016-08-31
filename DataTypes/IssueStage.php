@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class IssueStage extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class IssueStage extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'name' => null, //The name of the issue stage.
