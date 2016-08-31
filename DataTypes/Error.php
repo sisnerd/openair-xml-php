@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Error extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Error extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'comment' => null, //Additional comments.
 		'text' => null, //Text of the error.
 		'code' => null, //Error code returned by the API.

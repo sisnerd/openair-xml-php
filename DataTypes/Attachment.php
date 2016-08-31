@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Attachment extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Attachment extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'file_name' => null, //The true attachment name, as provided by the user on upload.
 		'locked_by' => null, //The ID of the user who uploaded the file, 0 if unlocked.

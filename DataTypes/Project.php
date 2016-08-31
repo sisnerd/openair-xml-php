@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Project extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Project extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'user_filter' => null, //Also allow these users to edit the project if the
 		'message' => null, //Dashboard message.

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Reimbursement extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Reimbursement extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'envelopeid' => null, //The associated envelope the reimbursement is

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class ImportExport extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class ImportExport extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Internal ID of the actual record (slip, task, etc.) in its
 		'application' => null, //String describing the application making the
 		'exported' => null, //Time of the last export from OpenAir. Required on

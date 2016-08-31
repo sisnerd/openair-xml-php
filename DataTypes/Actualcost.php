@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Actualcost extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Actualcost extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'name' => null, //The name of the actual cost. This field is never
 		'date' => null, //Date for the actual cost.

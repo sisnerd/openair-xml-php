@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Event extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Event extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'contact_id' => null, //The ID of the associated contact.
 		'userid' => null, //The ID of the user who created the event.

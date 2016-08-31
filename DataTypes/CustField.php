@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class CustField extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class CustField extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'userid' => null, //The ID of user who created or owns this custom field.
 		'rows' => null, //The number of display rows for text area fields

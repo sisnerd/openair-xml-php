@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Item extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Item extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'cost' => null, //The default cost per unit of measure for the item. 3

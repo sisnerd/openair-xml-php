@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Paymentterms extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Paymentterms extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'default_terms' => null, //A 1/0 field indicating whether this is the

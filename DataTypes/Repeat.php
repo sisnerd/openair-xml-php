@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Repeat extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Repeat extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'frequency' => null, //The repeating interval of the event: D – daily, W –
 		'every' => null, //The spacing between each repeating event.

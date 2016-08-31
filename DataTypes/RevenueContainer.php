@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class RevenueContainer extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class RevenueContainer extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'number' => null, //The revenue_container number that increments by 1.
 		'date' => null, //The date of the revenue_container.

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Category_3 extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Category_3 extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'name' => null, //The category name.
 		'code' => null, //Optional accounting system code for integration with

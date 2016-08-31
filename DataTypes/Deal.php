@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Deal extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Deal extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'closed' => null, //When this deal was closed.
 		'stage' => null, //The % of the work complete for this deal.

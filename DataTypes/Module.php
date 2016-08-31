@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Module extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Module extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'abbr' => null, //Abbreviation within OpenAir.
 		'enabled' => null, //A 1/0 field indicating whether the module is enabled.
     ];

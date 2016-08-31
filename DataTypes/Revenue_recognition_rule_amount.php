@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Revenue_recognition_rule_amount extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Revenue_recognition_rule_amount extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'revenue_recognition_rule_id' => null, //The ID of the associated rule.

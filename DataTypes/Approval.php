@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Approval extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Approval extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'cc' => null, //Email cc field.
 		'notes' => null, //Notes.
     ];

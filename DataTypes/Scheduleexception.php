@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Scheduleexception extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Scheduleexception extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'workhours' => null, //The number of hours per day during this daterange.

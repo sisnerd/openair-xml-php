@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Request_item extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Request_item extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'updated' => null, //Time the record was last updated or modified.

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Entitytag extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Entitytag extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'default_for_entity' => null, //A 1/0 field indicating whether this is the
 		'userid' => null, //The ID of the associated user.

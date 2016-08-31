@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class RateCardItem extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class RateCardItem extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'rate_card_id' => null, //The ID of the rate card that it is associated

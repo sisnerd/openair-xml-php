@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Purchaser extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Purchaser extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'Purchaser' => null, //
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.

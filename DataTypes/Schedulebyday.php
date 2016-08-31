@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Schedulebyday extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Schedulebyday extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'date' => null, //The date.
 		'hours' => null, //The number of schedule hours on this date for this user,

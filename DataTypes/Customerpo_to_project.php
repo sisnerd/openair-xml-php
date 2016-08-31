@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Customerpo_to_project extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Customerpo_to_project extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'customerpoid' => null, //The ID of the associated customerpo.
 		'created' => null, //Time the record was created.

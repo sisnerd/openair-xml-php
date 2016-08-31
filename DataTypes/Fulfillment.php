@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Fulfillment extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Fulfillment extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'purchaseorder_id' => null, //Associated purchase order ID.
 		'purchaserequest_id' => null, //Associated purchase request ID.

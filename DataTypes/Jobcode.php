@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Jobcode extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Jobcode extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'userid_fte' => null, //The user ID of the FTE (Full Time Equivalent)

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Resourcesearch extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Resourcesearch extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'include_inactive_resources' => null, //A "1/0" field. Include inactive
 		'startdate' => null, //The start date for availability

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Estimate extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Estimate extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'hide_expense' => null, //A 1/0 field indicating if expenses should be
 		'dealid' => null, //The ID of the associated deal.

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Envelope extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Envelope extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'totreimburse' => null, //The total amount of reimbursable expenses in the
 		'advance' => null, //The amount of any cash advance on the envelope.

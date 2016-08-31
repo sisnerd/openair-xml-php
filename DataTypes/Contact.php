@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Contact extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Contact extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'addr' => null, //The contact's address.
 		'customer_company' => null, //Import-only field to specify customer by

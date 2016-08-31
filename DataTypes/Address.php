@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Address extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Address extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'salutation' => null, //Contact's salutation
 		'mobile' => null, //Mobile phone number

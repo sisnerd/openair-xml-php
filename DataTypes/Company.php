@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Company extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Company extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'addr' => null, //The company's address.
 		'VAT_registration_number' => null, //VAT registration number.

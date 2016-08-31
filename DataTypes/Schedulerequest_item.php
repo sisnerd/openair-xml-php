@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Schedulerequest_item extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Schedulerequest_item extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'hours' => null, //The number of hours for this schedule request item.

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Projectgroup extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Projectgroup extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'assigned_users' => null, //The users assigned to this project group. Can
 		'created' => null, //Time the record was created.

@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Booking_request extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Booking_request extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'number' => null, //The booking_request number that increments by 1.
 		'project_task_id' => null, //The id of the task within the associated

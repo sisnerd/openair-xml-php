@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class IssueStatus extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class IssueStatus extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'name' => null, //The name of the issue status.
 		'active' => null, //A 1/0 field indicating if this issue status is active.

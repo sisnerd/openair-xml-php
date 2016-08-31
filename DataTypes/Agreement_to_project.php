@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Agreement_to_project extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Agreement_to_project extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'agreementid' => null, //The ID of the associated agreement.
 		'customerid' => null, //The ID of the associated customer. Does not need to

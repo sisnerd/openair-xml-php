@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Leave_accrual_transaction extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Leave_accrual_transaction extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'date' => null, //The date of the transaction.

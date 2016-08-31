@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Leave_accrual_rule extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Leave_accrual_rule extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'project_task_filter' => null, //CSV list of project_tasks that will

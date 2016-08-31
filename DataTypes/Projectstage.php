@@ -1,11 +1,13 @@
 <?php
 
-use OpenAir\Base\BaseCommandClass;
+namespace OpenAir\DataTypes;
 
-class Projectstage extends BaseCommandClass
+use OpenAir\Base\BaseDataTypeClass;
+
+class Projectstage extends BaseDataTypeClass
 {
 
-    private $data = [
+    protected $data = [
 		'id' => null, //Unique ID. Automatically assigned by the system.
 		'created' => null, //Time the record was created.
 		'updated' => null, //Time the record was last updated or modified.
