@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class FormPermissionField extends BaseDataTypeClass
+class FormPermissionField extends DataType
 {
 
     protected $data = [

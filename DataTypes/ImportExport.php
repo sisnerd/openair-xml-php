@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class ImportExport extends BaseDataTypeClass
+class ImportExport extends DataType
 {
 
     protected $data = [

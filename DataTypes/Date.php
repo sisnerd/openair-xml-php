@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Date extends BaseDataTypeClass
+class Date extends DataType
 {
 
     protected $data = [
@@ -16,8 +16,16 @@ class Date extends BaseDataTypeClass
 		'second' => null, //Second.
     ];
 
-    function __construct()
+    function __construct($hour=null, $minute=null, $second=null, $month=null, $day=null,$year=null)
     {
         parent::__construct();
+        $ary = ['hour' => 'H', 'minute' => 'i', 'second' => 's', 'month' => 'n', 'day' => 'j', 'year' => 'Y'];
+        foreach($ary as $var => $dateStr){
+            if(is_null($$var)){
+                $this->data[$var] = date($dateStr);
+            }else{
+                $this->data[$var] = $$var;
+            }
+        }
     }
 }

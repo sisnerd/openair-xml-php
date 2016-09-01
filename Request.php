@@ -2,7 +2,7 @@
 
 namespace OpenAir;
 
-use OpenAir\Base\BaseCommandClass;
+use OpenAir\Base\Command;
 
 class Request extends OpenAir
 {
@@ -14,6 +14,7 @@ class Request extends OpenAir
     private $client;
     private $client_ver;
     private $url = 'https://www.openair.com/api.pl';
+    private $bDebug = false;
 
     function __construct($namespace, $key, $api_ver = '1.0', $client = 'test app', $client_ver = '1.1'){
         $this->namespace = $namespace;
@@ -23,12 +24,17 @@ class Request extends OpenAir
         $this->client_ver = $client_ver;
     }
 
-    public function addCommand(BaseCommandClass $command){
+    public function setDebug($bDebug){
+        $this->bDebug = $bDebug;
+    }
+
+    public function addCommand(Command $command){
         $this->commands[] = $command;
     }
 
     public function execute(){
         $xml = $this->_buildRequest();
+        if($this->bDebug)echo "<pre>REQUEST: ".$xml.PHP_EOL.PHP_EOL."</pre>";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -37,41 +43,22 @@ class Request extends OpenAir
         $result = curl_exec($ch);
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         if($httpcode === 200){
-            return $this->_processResponse($result);
+            if($this->bDebug){
+                $dom = new \DOMDocument();
+                $dom->formatOutput = true;
+                $dom->loadXML($result);
+                echo "<pre>RESPONSE: ".$dom->saveXML()."</pre>";
+                //echo "RESPOSNE: ".$result.PHP_EOL.PHP_EOL;
+            }
+            return new Response($result);
         }else{
             return $httpcode;
         }
     }
 
-    private function _processResponse($strXMLResponse){
-        $dom = new \DOMDocument();
-        if($dom->loadXML($strXMLResponse)){
-            $objResponse = new Response();
-            foreach ($dom->documentElement->childNodes AS $item) {
-                if($item->childNodes->length > 0){
-                    foreach ($item->childNodes as $grandchild) {
-                        $strDataType = '\\OpenAir\\DataTypes\\'.$grandchild->tagName;
-                        if(class_exists($strDataType)){
-                            $objDataType = new $strDataType();
-                        }else{
-                            $objDataType = new \stdClass();
-                        }
-                        foreach($grandchild->childNodes as $nodeData){
-                            $objDataType->{$nodeData->tagName} = $nodeData->nodeValue;
-                        }
-                    }
-                    $objResponse->addCommandResponse($item->tagName, $objDataType, $item->getAttribute('status'));
-                }else{
-                    $objResponse->addCommandResponse($item->tagName, null, $item->getAttribute('status'));
-                }
-            }
-            return $objResponse;
-        }
-        return false;
-    }
-
     private function _buildRequest(){
         $dom = new \DOMDocument();
+        if($this->bDebug)$dom->formatOutput = true;
         $request = $dom->createElement('request');
 
         // api version
@@ -101,7 +88,9 @@ class Request extends OpenAir
 
         foreach($this->commands as $objCommand){
             $xmlCommand = $objCommand->_buildRequest($dom);
-            $request->appendChild($xmlCommand);
+            if(!is_null($xmlCommand)){
+                $request->appendChild($xmlCommand);
+            }
         }
 
         $dom->appendChild($request);

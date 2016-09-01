@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class BillingSplit extends BaseDataTypeClass
+class BillingSplit extends DataType
 {
 
     protected $data = [

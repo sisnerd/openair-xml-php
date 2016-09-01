@@ -3,9 +3,9 @@
 namespace OpenAir\Commands;
 
 
-use OpenAir\Base\BaseCommandClass;
+use OpenAir\Base\Command;
 
-class RemoteAuth extends BaseCommandClass
+class RemoteAuth extends Command
 {
 
 

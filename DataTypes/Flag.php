@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Flag extends BaseDataTypeClass
+class Flag extends DataType
 {
 
     protected $data = [
@@ -13,8 +13,14 @@ class Flag extends BaseDataTypeClass
 		'setting' => null, //The value to which the switch is set.
     ];
 
-    function __construct()
+    function __construct($name=null, $setting=null)
     {
         parent::__construct();
+        if(!is_null($name)){
+            $this->data['name'] = $name;
+        }
+        if(!is_null($setting)){
+            $this->data['setting'] = $setting;
+        }
     }
 }

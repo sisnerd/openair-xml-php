@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Projectgroup extends BaseDataTypeClass
+class Projectgroup extends DataType
 {
 
     protected $data = [

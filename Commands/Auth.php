@@ -2,12 +2,11 @@
 
 namespace OpenAir\Commands;
 
-use OpenAir\Base\BaseCommandClass;
+use OpenAir\Base\Command;
 
-class Auth extends BaseCommandClass
+class Auth extends Command
 {
     private $login_object;
-    public $status;
 
     function __construct(\OpenAir\DataTypes\Login $loginObject = null)
     {

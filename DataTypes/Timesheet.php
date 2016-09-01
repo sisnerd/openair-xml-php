@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Timesheet extends BaseDataTypeClass
+class Timesheet extends DataType
 {
 
     protected $data = [

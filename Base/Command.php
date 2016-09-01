@@ -4,7 +4,7 @@ namespace OpenAir\Base;
 
 use OpenAir\OpenAir;
 
-class BaseCommandClass extends OpenAir
+class Command extends OpenAir
 {
     const STATUS_SUCCESS = 0;
     const STATUS_UNKNOWN_ERROR = 1;
@@ -18,11 +18,31 @@ class BaseCommandClass extends OpenAir
     const STATUS_LOGGED_OUT = 9;
     const STATUS_INVALID_PARAMETERS = 10;
 
+    protected $datatypes = [];
+
+    protected $responseCode;
+
     function __construct(){ }
     
     function _buildRequest(\DOMDocument $dom){
         $ReflectionClass = new \ReflectionClass($this);
         $strRequest = $ReflectionClass->getShortName();
         return $dom->createElement($strRequest);
+    }
+
+    function setResponseStatus($insResponseCode){
+        $this->responseCode = $insResponseCode;
+    }
+
+    function getResponseStatus(){
+        return $this->responseCode;
+    }
+
+    function addDataType(DataType $datatype){
+        $this->datatypes[] = $datatype;
+    }
+
+    function getDataTypes(){
+        return $this->datatypes;
     }
 }

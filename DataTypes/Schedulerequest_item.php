@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Schedulerequest_item extends BaseDataTypeClass
+class Schedulerequest_item extends DataType
 {
 
     protected $data = [

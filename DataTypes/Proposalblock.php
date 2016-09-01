@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Proposalblock extends BaseDataTypeClass
+class Proposalblock extends DataType
 {
 
     protected $data = [

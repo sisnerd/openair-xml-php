@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class TaskTimecard extends BaseDataTypeClass
+class TaskTimecard extends DataType
 {
 
     protected $data = [

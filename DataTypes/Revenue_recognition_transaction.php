@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Revenue_recognition_transaction extends BaseDataTypeClass
+class Revenue_recognition_transaction extends DataType
 {
 
     protected $data = [

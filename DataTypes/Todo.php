@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Todo extends BaseDataTypeClass
+class Todo extends DataType
 {
 
     protected $data = [
