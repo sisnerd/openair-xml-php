@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Slipstage extends BaseDataTypeClass
+class Slipstage extends DataType
 {
 
     protected $data = [

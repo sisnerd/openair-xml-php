@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Jobcode extends BaseDataTypeClass
+class Jobcode extends DataType
 {
 
     protected $data = [

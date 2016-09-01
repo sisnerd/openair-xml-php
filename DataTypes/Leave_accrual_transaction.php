@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Leave_accrual_transaction extends BaseDataTypeClass
+class Leave_accrual_transaction extends DataType
 {
 
     protected $data = [

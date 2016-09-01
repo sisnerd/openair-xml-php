@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Entitytag extends BaseDataTypeClass
+class Entitytag extends DataType
 {
 
     protected $data = [

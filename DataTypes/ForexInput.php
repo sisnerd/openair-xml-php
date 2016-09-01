@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class ForexInput extends BaseDataTypeClass
+class ForexInput extends DataType
 {
 
     protected $data = [

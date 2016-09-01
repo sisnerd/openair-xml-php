@@ -3,9 +3,9 @@
 namespace OpenAir\Commands;
 
 
-use OpenAir\Base\BaseCommandClass;
+use OpenAir\Base\Command;
 
-class CreateUser extends BaseCommandClass
+class CreateUser extends Command
 {
 
 

@@ -4,11 +4,11 @@ namespace OpenAir\Base;
 
 use OpenAir\OpenAir;
 
-class BaseDataTypeClass extends OpenAir
+class DataType extends OpenAir
 {
     function __construct()
     {
-        // nothing here... yet
+        
     }
 
     function __get($name){
@@ -44,4 +44,5 @@ class BaseDataTypeClass extends OpenAir
         }
         return $xmlDataType;
     }
+    
 }

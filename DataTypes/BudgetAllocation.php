@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class BudgetAllocation extends BaseDataTypeClass
+class BudgetAllocation extends DataType
 {
 
     protected $data = [

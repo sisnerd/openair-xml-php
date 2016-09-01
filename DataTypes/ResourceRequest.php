@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class ResourceRequest extends BaseDataTypeClass
+class ResourceRequest extends DataType
 {
 
     protected $data = [

@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Currency extends BaseDataTypeClass
+class Currency extends DataType
 {
 
     protected $data = [

@@ -2,9 +2,9 @@
 
 namespace OpenAir\Commands;
 
-use OpenAir\Base\BaseCommandClass;
+use OpenAir\Base\Command;
 
-class Time extends BaseCommandClass
+class Time extends Command
 {
     function __construct()
     {

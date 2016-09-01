@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Estimate extends BaseDataTypeClass
+class Estimate extends DataType
 {
 
     protected $data = [

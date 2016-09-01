@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Event extends BaseDataTypeClass
+class Event extends DataType
 {
 
     protected $data = [

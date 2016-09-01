@@ -3,9 +3,9 @@
 namespace OpenAir\Commands;
 
 
-use OpenAir\Base\BaseCommandClass;
+use OpenAir\Base\Command;
 
-class Version extends BaseCommandClass
+class Version extends Command
 {
 
 

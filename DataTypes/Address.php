@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Address extends BaseDataTypeClass
+class Address extends DataType
 {
 
     protected $data = [

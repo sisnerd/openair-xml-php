@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Attachment extends BaseDataTypeClass
+class Attachment extends DataType
 {
 
     protected $data = [

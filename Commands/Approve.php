@@ -3,9 +3,9 @@
 namespace OpenAir\Commands;
 
 
-use OpenAir\Base\BaseCommandClass;
+use OpenAir\Base\Command;
 
-class Approve extends BaseCommandClass
+class Approve extends Command
 {
 
 

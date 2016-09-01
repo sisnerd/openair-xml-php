@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Filterset extends BaseDataTypeClass
+class Filterset extends DataType
 {
 
     protected $data = [

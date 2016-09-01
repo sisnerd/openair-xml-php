@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Ccrate extends BaseDataTypeClass
+class Ccrate extends DataType
 {
 
     protected $data = [

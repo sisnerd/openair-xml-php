@@ -2,9 +2,9 @@
 
 namespace OpenAir\DataTypes;
 
-use OpenAir\Base\BaseDataTypeClass;
+use OpenAir\Base\DataType;
 
-class Leave_accrual_rule_to_user extends BaseDataTypeClass
+class Leave_accrual_rule_to_user extends DataType
 {
 
     protected $data = [
