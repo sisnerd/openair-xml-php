@@ -23,7 +23,7 @@ class Read extends Command
     const ERROR_LIMIT_CLAUSE_MUST_BE_SPECIFIED = 605; //OR LESS THAN THE ACCOUNT LIMIT FOR OUTPUT DATA
     const ERROR_PROJECTIONS_RUNNING_TRY_LATER = 606;
 
-    private $attributes = [
+    protected $attributes = [
         'limit' => null,
         'type' => null,
         'method' => self::METHOD_ALL,
@@ -35,25 +35,19 @@ class Read extends Command
         'generic' => null,
         'enable_custom' => null,
         'filters' => [],
+        'fields' => null
     ];
+
+    protected $returnvalues = [];
 
     function __construct(array $aryAttributes = null)
     {
-        parent::__construct();
-        if(!is_null($aryAttributes)){
-            foreach($aryAttributes as $key => $val){
-                if(array_key_exists($key, $this->attributes)){
-                    if($key == 'filters' && !is_array($val)){
-                        throw new \Exception('filters attribute must be an array');
-                    }
-                    $this->attributes[$key] = $val;
-                }
-            }
-        }
+        parent::__construct($aryAttributes);
     }
 
     function _buildRequest(\DOMDocument $dom){
-        $readCommandObj = parent::_buildRequest($dom); //creates <Read>
+        $readCommandObj = $dom->createElement("Read");
+
         foreach($this->attributes as $key => $val){
             if(!is_null($val)){
                 if($key == 'filters'){
@@ -83,7 +77,19 @@ class Read extends Command
             $test = $objDataType->_buildRequest($dom);
             $readCommandObj->appendChild($test);
         }
+        if(count($this->returnvalues) > 0){
+            $readResponse = $dom->createElement("_Return");
+            foreach($this->returnvalues as $val){
+                $xmlVal = $dom->createElement($val);
+                $readResponse->appendChild($xmlVal);
+            }
+            $readCommandObj->appendChild($readResponse);
+        }
         return $readCommandObj;
+    }
+
+    function setReturnValues(array $fields){
+        $this->returnvalues = $fields;
     }
 
 }

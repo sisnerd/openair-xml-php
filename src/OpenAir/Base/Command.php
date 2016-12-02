@@ -22,12 +22,38 @@ class Command extends OpenAir
 
     protected $responseCode;
 
-    function __construct(){ }
+    function __construct($aryAttributes = null){
+        if(!is_null($aryAttributes) && isset($this->attributes)){
+            foreach($aryAttributes as $key => $val){
+                if(array_key_exists($key, $this->attributes)){
+                    $this->attributes[$key] = $val;
+                }
+            }
+        }
+    }
     
     function _buildRequest(\DOMDocument $dom){
         $ReflectionClass = new \ReflectionClass($this);
         $strRequest = $ReflectionClass->getShortName();
-        return $dom->createElement($strRequest);
+
+        $el = $dom->createElement($strRequest);
+        if(isset($this->attributes)){
+            foreach($this->attributes as $key => $val){
+                if(!is_null($val)){
+                    $objAttr = $dom->createAttribute($key);
+                    $objAttr->value = $val;
+                    $el->appendChild($objAttr);
+                }
+            }
+        }
+        if(isset($this->datatypes) && count($this->datatypes) > 0){
+            foreach($this->datatypes as $objDataType){
+                $test = $objDataType->_buildRequest($dom);
+                $el->appendChild($test);
+            }
+        }
+
+        return $el;
     }
 
     function setResponseStatus($insResponseCode){

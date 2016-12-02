@@ -13,12 +13,13 @@ class Request extends OpenAir
     private $api_ver;
     private $client;
     private $client_ver;
-    private $url = 'https://www.openair.com/api.pl';
+    private $url ;
     private $bDebug = false;
 
-    function __construct($namespace, $key, $api_ver = '1.0', $client = 'test app', $client_ver = '1.1'){
+    function __construct($namespace, $key, $url='https://www.openair.com/api.pl', $api_ver = '1.0', $client = 'test app', $client_ver = '1.1'){
         $this->namespace = $namespace;
         $this->key = $key;
+        $this->url = $url;
         $this->api_ver = $api_ver;
         $this->client = $client;
         $this->client_ver = $client_ver;
@@ -35,6 +36,7 @@ class Request extends OpenAir
     public function execute(){
         $xml = $this->_buildRequest();
         if($this->bDebug)echo "<pre>REQUEST: ".$xml.PHP_EOL.PHP_EOL."</pre>";
+        //exit;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
