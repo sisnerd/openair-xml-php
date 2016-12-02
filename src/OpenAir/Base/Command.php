@@ -68,7 +68,10 @@ class Command extends OpenAir
         $this->datatypes[] = $datatype;
     }
 
-    function getDataTypes(){
-        return $this->datatypes;
+    function getResponseData(){
+        if($this->responseCode == self::STATUS_SUCCESS){
+            return $this->datatypes;
+        }
+        return null;
     }
 }
