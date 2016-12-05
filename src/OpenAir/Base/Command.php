@@ -20,7 +20,9 @@ class Command extends OpenAir
 
     protected $datatypes = [];
 
-    protected $responseCode;
+    public $responseCode;
+
+    protected $returnvalues = [];
 
     function __construct($aryAttributes = null){
         if(!is_null($aryAttributes) && isset($this->attributes)){
@@ -32,7 +34,7 @@ class Command extends OpenAir
         }
     }
     
-    function _buildRequest(\DOMDocument $dom){
+    public function _buildRequest(\DOMDocument $dom){
         $ReflectionClass = new \ReflectionClass($this);
         $strRequest = $ReflectionClass->getShortName();
 
@@ -56,22 +58,30 @@ class Command extends OpenAir
         return $el;
     }
 
-    function setResponseStatus($insResponseCode){
+    /*protected function setResponseStatus($insResponseCode){
         $this->responseCode = $insResponseCode;
-    }
+    }*/
 
-    function getResponseStatus(){
+    public function getResponseStatus(){
         return $this->responseCode;
     }
 
-    function addDataType(DataType $datatype){
+    public function addDataType(DataType $datatype){
         $this->datatypes[] = $datatype;
     }
 
-    function getResponseData(){
+    public function getResponseData(){
         if($this->responseCode == self::STATUS_SUCCESS){
             return $this->datatypes;
         }
         return null;
+    }
+
+    function setReturnValues(array $fields){
+        $this->returnvalues = $fields;
+    }
+
+    public function getReturnValues(){
+        return $this->returnvalues;
     }
 }

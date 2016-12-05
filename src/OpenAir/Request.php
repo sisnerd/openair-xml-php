@@ -33,6 +33,12 @@ class Request extends OpenAir
         $this->commands[] = $command;
     }
 
+    public function setCommands(array $commands){
+        foreach($commands as $command){
+            $this->addCommand($command);
+        }
+    }
+
     public function execute(){
         $xml = $this->_buildRequest();
         if($this->bDebug)echo "<pre>REQUEST: ".$xml.PHP_EOL.PHP_EOL."</pre>";

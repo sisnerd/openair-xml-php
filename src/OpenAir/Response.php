@@ -20,7 +20,9 @@ class Response extends OpenAir
             }else{
                 $objCommand = new \stdClass();
             }
-            $objCommand->setResponseStatus((int)$aryDataTypes[0]->attributes()['status'][0]);
+            $intResponseCode = (int)$aryDataTypes[0]->attributes()['status'][0];
+            //$objCommand->setResponseStatus((int)$aryDataTypes[0]->attributes()['status'][0]);
+            $objCommand->responseCode = $intResponseCode;
             foreach($aryDataTypes as $dataType => $objRespnseDataDataType){
                 $strDataType = '\\OpenAir\\DataTypes\\'.$dataType;
                 if(class_exists($strCommand)){
@@ -60,7 +62,15 @@ class Response extends OpenAir
                 }
                 $objCommand->addDataType($objDataType);
             }
-            $this->commands[$strOrigCommand] = $objCommand;
+
+            if(in_array($strOrigCommand, ['Auth', 'Whoami'])){
+                $this->commands[$strOrigCommand] = $objCommand;
+            }else{
+                if(!array_key_exists($strOrigCommand, $this->commands)){
+                    $this->commands[$strOrigCommand] = [];
+                }
+                $this->commands[$strOrigCommand][] = $objCommand;
+            }
         }
     }
 
