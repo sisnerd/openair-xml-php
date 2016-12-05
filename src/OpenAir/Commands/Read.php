@@ -16,7 +16,7 @@ class Read extends Command
     const METHOD_PROJECT = 'project';
     const METHOD_NOT_EXPORTED = 'not exported';
 
-    const ERROR_ID_CODE_INVALID = 601;
+    const ERROR_ID_CODE_INVALID = 601; //no results
     const ERROR_INVALID_FIELD = 602;
     const ERROR_INVALID_TYPE_OR_METHOD = 603;
     const ERROR_ATTACHMENT_EXCEEDS_AVAIL_SPACE = 604;
@@ -47,24 +47,21 @@ class Read extends Command
 
     function _buildRequest(\DOMDocument $dom){
         $readCommandObj = $dom->createElement("Read");
-
         foreach($this->attributes as $key => $val){
             if(!is_null($val)){
                 if($key == 'filters'){
                     if(count($this->attributes[$key]) > 0){
-                        $filters = [];
-                        $fields = [];
-                        foreach($this->attributes[$key] as $filter => $field){
-                            $filters[] = $filter;
-                            $fields[] = $field;
+                        if(array_key_exists('filter', $this->attributes[$key]) && $this->attributes[$key]['filter'] != ''){
+                            $objAttr = $dom->createAttribute('filter');
+                            $objAttr->value = $this->attributes[$key]['filter'];
+                            $readCommandObj->appendChild($objAttr);
                         }
-                        $objAttr = $dom->createAttribute('filter');
-                        $objAttr->value = implode(',',$filters);
-                        $readCommandObj->appendChild($objAttr);
 
-                        $objAttr = $dom->createAttribute('field');
-                        $objAttr->value = implode(',',$fields);;
-                        $readCommandObj->appendChild($objAttr);
+                        if(array_key_exists('field', $this->attributes[$key]) && $this->attributes[$key]['field'] != '') {
+                            $objAttr = $dom->createAttribute('field');
+                            $objAttr->value = $this->attributes[$key]['field'];
+                            $readCommandObj->appendChild($objAttr);
+                        }
                     }
                 }else{
                     $objAttr = $dom->createAttribute($key);
@@ -92,4 +89,11 @@ class Read extends Command
         $this->returnvalues = $fields;
     }
 
+    function getType(){
+        return $this->attributes['type'];
+    }
+
+    function setType($type){
+        $this->attributes['type'] = $type;
+    }
 }

@@ -21,9 +21,7 @@ class Date extends DataType
         parent::__construct();
         $ary = ['hour' => 'H', 'minute' => 'i', 'second' => 's', 'month' => 'n', 'day' => 'j', 'year' => 'Y'];
         foreach($ary as $var => $dateStr){
-            if(is_null($$var)){
-                $this->data[$var] = date($dateStr);
-            }else{
+            if(!is_null($$var) && $$var > 0){
                 $this->data[$var] = $$var;
             }
         }

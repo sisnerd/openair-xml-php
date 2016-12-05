@@ -37,8 +37,15 @@ class Booking extends DataType
 		'source_booking_id' => null, //Id of the booking used to create this
     ];
 
-    function __construct()
+    function __construct($data = [])
     {
+		if(count($data) > 0){
+			foreach($data as $key => $val){
+				if(array_key_exists($key, $this->data)){
+					$this->data[$key] = $val;
+				}
+			}
+		}
         parent::__construct();
     }
 }

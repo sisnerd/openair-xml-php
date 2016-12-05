@@ -3,10 +3,12 @@
 namespace OpenAir;
 
 use OpenAir\Base\Command;
+use OpenAir\Commands\Auth;
 
 class Request extends OpenAir
 {
     private $commands = [];
+    private $auth;
     private $xml;
     private $namespace;
     private $key;
@@ -33,10 +35,18 @@ class Request extends OpenAir
         $this->commands[] = $command;
     }
 
+    public function addAuthCommand(Auth $command){
+        $this->auth = $command;
+    }
+
     public function setCommands(array $commands){
         foreach($commands as $command){
             $this->addCommand($command);
         }
+    }
+
+    public function clearCommands(){
+        $this->commands = [];
     }
 
     public function execute(){
@@ -60,6 +70,7 @@ class Request extends OpenAir
                 echo "<pre>RESPONSE: ".$dom->saveXML()."</pre>";
                 //echo "RESPOSNE: ".$result.PHP_EOL.PHP_EOL;
             }
+            $this->clearCommands();
             return new Response($result);
         }else{
             return $httpcode;
@@ -96,6 +107,9 @@ class Request extends OpenAir
         $key->value = $this->key;
         $request->appendChild($key);
 
+        if(count($this->auth) > 0){
+            array_unshift($this->commands, $this->auth);
+        }
         foreach($this->commands as $objCommand){
             $xmlCommand = $objCommand->_buildRequest($dom);
             if(!is_null($xmlCommand)){

@@ -6,9 +6,15 @@ use OpenAir\OpenAir;
 
 class DataType extends OpenAir
 {
-    function __construct()
+    function __construct($data = [])
     {
-        
+        if(count($data) > 0){
+            foreach($data as $key => $val){
+                if(array_key_exists($key, $this->data)){
+                    $this->data[$key] = $val;
+                }
+            }
+        }
     }
 
     function __get($name){
@@ -37,7 +43,12 @@ class DataType extends OpenAir
         if(isset($this->data)){
             foreach ($this->data as $tag => $data){
                 if(!is_null($data)){
-                    $objTag = $domObj->createElement($tag, $data);
+                    if($data instanceof DataType){
+                        $objTag = $domObj->createElement($tag);
+                        $objTag->appendChild($data->_buildRequest($domObj));
+                    }else{
+                        $objTag = $domObj->createElement($tag, $data);
+                    }
                     $xmlDataType->appendChild($objTag);
                 }
             }

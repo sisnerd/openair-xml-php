@@ -34,8 +34,15 @@ class Timesheet extends DataType
 		'default_per_row' => null, //Holds a data structure of per row defaults.
     ];
 
-    function __construct()
+    function __construct($data = [])
     {
+		if(count($data) > 0){
+			foreach($data as $key => $val){
+				if(array_key_exists($key, $this->data)){
+					$this->data[$key] = $val;
+				}
+			}
+		}
         parent::__construct();
     }
 }

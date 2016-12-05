@@ -3,6 +3,7 @@
 namespace OpenAir;
 
 use OpenAir\Base\Command;
+use OpenAir\Commands\Read;
 use OpenAir\DataTypes\Address;
 use OpenAir\DataTypes\Flag;
 
