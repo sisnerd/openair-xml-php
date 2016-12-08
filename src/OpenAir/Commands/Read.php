@@ -34,7 +34,10 @@ class Read extends Command
         'limit' => null,
         'generic' => null,
         'enable_custom' => null,
-        'filters' => [],
+        'filters' => [
+            'filter' => [],
+            'field' => []
+        ],
         'fields' => null
     ];
 
