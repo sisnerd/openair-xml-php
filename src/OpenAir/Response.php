@@ -75,7 +75,7 @@ class Response extends OpenAir
         }
     }
 
-    function getCommandResposne($strCommand){
+    function getCommandResponse($strCommand){
         if(array_key_exists($strCommand, $this->commands)){
             return $this->commands[$strCommand];
         }

@@ -6,15 +6,9 @@ use OpenAir\OpenAir;
 
 class DataType extends OpenAir
 {
-    function __construct($data = [])
+    function __construct()
     {
-        if(count($data) > 0){
-            foreach($data as $key => $val){
-                if(array_key_exists($key, $this->data)){
-                    $this->data[$key] = $val;
-                }
-            }
-        }
+
     }
 
     function __get($name){

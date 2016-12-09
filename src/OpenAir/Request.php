@@ -73,6 +73,10 @@ class Request extends OpenAir
             $this->clearCommands();
             return new Response($result);
         }else{
+            if($this->bDebug){
+                $info = curl_getinfo($ch);
+                print_r($info);
+            }
             return $httpcode;
         }
     }
