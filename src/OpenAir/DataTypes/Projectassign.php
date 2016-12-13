@@ -19,8 +19,15 @@ class Projectassign extends DataType
 		'allocation' => null, //The percentage of time the associated user is
     ];
 
-    function __construct()
+    function __construct($data = [])
     {
+		if(count($data) > 0){
+			foreach($data as $key => $val){
+				if(array_key_exists($key, $this->data)){
+					$this->data[$key] = $val;
+				}
+			}
+		}
         parent::__construct();
     }
 }
