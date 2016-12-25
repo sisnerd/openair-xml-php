@@ -71,7 +71,7 @@ class Command extends OpenAir
     }
 
     public function getResponseData(){
-        if($this->responseCode == self::STATUS_SUCCESS){
+        if(!is_null($this->responseCode)){
             return $this->datatypes;
         }
         return null;

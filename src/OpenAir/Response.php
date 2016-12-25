@@ -70,7 +70,7 @@ class Response extends OpenAir
             }
 
 
-            if(in_array($strOrigCommand, ['Auth', 'Whoami', 'MakeURL'])){
+            if(in_array($strOrigCommand, ['Auth', 'Whoami', 'MakeURL', 'Submit'])){
                 $this->commands[$strOrigCommand] = $objCommand;
             }else{
                 if(!array_key_exists($strOrigCommand, $this->commands)){

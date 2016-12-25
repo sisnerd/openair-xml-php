@@ -32,6 +32,8 @@ class Timesheet extends DataType
 		'duration' => null, //The duration of the timesheet:
 		'default_projecttaskid' => null, //The default task id this timesheet is
 		'default_per_row' => null, //Holds a data structure of per row defaults.
+		'warnings' => null, //Holds warnings from submission attempts.
+		'errors' => null, //Holds errors from submission attempts.
     ];
 
     function __construct($data = [])

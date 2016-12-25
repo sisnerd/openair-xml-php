@@ -7,10 +7,30 @@ use OpenAir\Base\Command;
 
 class Add extends Command
 {
+    protected $attributes = [
+        'type' => null
+    ];
 
-
-    function __construct()
+    function __construct(array $aryAttributes = null)
     {
-        parent::__construct();
+        parent::__construct($aryAttributes);
+    }
+
+    function _buildRequest(\DOMDocument $dom){
+        $readCommandObj = $dom->createElement("Add");
+        foreach($this->attributes as $key => $val){
+            if(!is_null($val)){
+                $objAttr = $dom->createAttribute($key);
+                $objAttr->value = $val;
+                $readCommandObj->appendChild($objAttr);
+            }
+        }
+
+        foreach($this->datatypes as $objDataType){
+            $test = $objDataType->_buildRequest($dom);
+            $readCommandObj->appendChild($test);
+        }
+
+        return $readCommandObj;
     }
 }
