@@ -31,7 +31,6 @@ class Read extends Command
         'include_flags' => null,
         'include_nondeleted' => null,
         'base_currency' => null,
-        'limit' => null,
         'generic' => null,
         'enable_custom' => null,
         'filters' => [

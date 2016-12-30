@@ -23,8 +23,15 @@ class Uprate extends DataType
 		'job_codeid' => null, //The ID of the associated job code.
     ];
 
-    function __construct()
-    {
-        parent::__construct();
-    }
+	function __construct($data = [])
+	{
+		if(count($data) > 0){
+			foreach($data as $key => $val){
+				if(array_key_exists($key, $this->data)){
+					$this->data[$key] = $val;
+				}
+			}
+		}
+		parent::__construct();
+	}
 }
