@@ -17,6 +17,7 @@ class Request extends OpenAir
     private $client_ver;
     private $url ;
     private $bDebug = false;
+    private $bAuthAdded = false;
 
     function __construct($namespace, $key, $url='https://www.openair.com/api.pl', $api_ver = '1.0', $client = 'test app', $client_ver = '1.1'){
         $this->namespace = $namespace;
@@ -81,6 +82,10 @@ class Request extends OpenAir
         }
     }
 
+    public function getXMLRequest(){
+        return $this->_buildRequest();
+    }
+
     private function _buildRequest(){
         $dom = new \DOMDocument();
         if($this->bDebug)$dom->formatOutput = true;
@@ -111,9 +116,11 @@ class Request extends OpenAir
         $key->value = $this->key;
         $request->appendChild($key);
 
-        if(count($this->auth) > 0){
+        if(count($this->auth) > 0 && !$this->bAuthAdded){
             array_unshift($this->commands, $this->auth);
+            $this->bAuthAdded = true;
         }
+
         foreach($this->commands as $objCommand){
             $xmlCommand = $objCommand->_buildRequest($dom);
             if(!is_null($xmlCommand)){
