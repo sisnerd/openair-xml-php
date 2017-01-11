@@ -9,9 +9,11 @@ use OpenAir\DataTypes\Url;
 class Response extends OpenAir
 {
     private $commands = [];
+    private $strResponse;
 
     function __construct($strXMLResponse)
     {
+        $this->strResponse = $strXMLResponse;
         $objXML = new \SimpleXMLElement($strXMLResponse);
         foreach($objXML as $strOrigCommand => $aryDataTypes){
             $strCommand = '\\OpenAir\\Commands\\'.$strOrigCommand;
@@ -86,4 +88,14 @@ class Response extends OpenAir
             return $this->commands[$strCommand];
         }
     }
+
+    /**
+     * @return mixed
+     */
+    public function getXMLResponse()
+    {
+        return $this->strResponse;
+    }
+
+
 }
