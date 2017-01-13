@@ -48,6 +48,7 @@ class Request extends OpenAir
 
     public function clearCommands(){
         $this->commands = [];
+        $this->bAuthAdded = false;
     }
 
     public function execute(){
