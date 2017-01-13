@@ -72,7 +72,7 @@ class Request extends OpenAir
                 //echo "RESPOSNE: ".$result.PHP_EOL.PHP_EOL;
             }
             $this->clearCommands();
-            return new Response($result);
+            return new Response($result, $xml);
         }else{
             if($this->bDebug){
                 $info = curl_getinfo($ch);
