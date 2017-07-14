@@ -55,7 +55,7 @@ class DataType extends OpenAir
                         $objTag = $domObj->createElement($tag);
                         $objTag->appendChild($data->_buildRequest($domObj));
                     }else{
-                        $objTag = $domObj->createElement($tag, $data);
+                        $objTag = $domObj->createElement($tag, htmlentities($data));
                     }
                     $xmlDataType->appendChild($objTag);
                 }
