@@ -8,13 +8,9 @@ use OpenAir\Base\Command;
 class Add extends Command
 {
     protected $attributes = [
-        'type' => null
+        'type' => null,
+        'enable_custom' => null
     ];
-
-    function __construct(array $aryAttributes = null)
-    {
-        parent::__construct($aryAttributes);
-    }
 
     function _buildRequest(\DOMDocument $dom){
         $readCommandObj = $dom->createElement("Add");

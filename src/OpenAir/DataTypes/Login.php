@@ -15,7 +15,7 @@ class Login extends DataType
 
     function __construct($company = null, $user = null, $password = null)
     {
-        if(!is_null($company)){
+        /*if(!is_null($company)){
             $this->data['company'] = $company;
         }
         if(!is_null($user)){
@@ -23,7 +23,11 @@ class Login extends DataType
         }
         if(!is_null($password)){
             $this->data['password'] = $password;
-        }
-        parent::__construct();
+        }*/
+        parent::__construct([
+            'company' => $company,
+            'user' => $user,
+            'password' => $password
+        ]);
     }
 }

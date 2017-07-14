@@ -28,8 +28,15 @@ class Address extends DataType
 		'addr3' => null, //Address line 3
     ];
 
-    function __construct()
+    function __construct(array $data = [])
     {
+        if(count($data) > 0){
+            foreach($data as $key => $val){
+                if(array_key_exists($key, $this->data)){
+                    $this->data[$key] = $val;
+                }
+            }
+        }
         parent::__construct();
     }
 }

@@ -21,9 +21,4 @@ class Reimbursement extends DataType
 		'userid' => null, //The user associated with the envelope the
 		'audit' => null, //Audit trail changes.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }
