@@ -60,7 +60,7 @@ class Response extends OpenAir
                         }elseif($key == 'addr'){
                             $objAddress = new Address();
                             foreach((array)$objXmlVal->Address as $key2 => $val2){
-                                $objAddress->$key2 = (string)$val2;
+                                $objAddress->{$key2} = (string)$val2;
                             }
                             $objDataType->$key = $objAddress;
                         }else{

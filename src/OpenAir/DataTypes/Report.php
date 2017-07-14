@@ -19,9 +19,4 @@ class Report extends DataType
 		'email_report' => null, //A 1/0 field. 1 = report executes and sends an
 		'relatedid' => null, //Related ID for attribute type. Report = ID of saved
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

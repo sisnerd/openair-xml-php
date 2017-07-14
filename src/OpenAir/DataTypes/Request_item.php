@@ -38,9 +38,4 @@ class Request_item extends DataType
 		'customerid' => null, //The ID of the associated customer. This is always
 		'exported' => null, //Date and time the record was marked as exported.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }
