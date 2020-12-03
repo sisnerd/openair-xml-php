@@ -22,7 +22,6 @@ class Request extends OpenAir
     function __construct($namespace, $key, $api_ver = '1.0', $client = 'test app', $client_ver = '1.1'){
         $this->namespace = $namespace;
         $this->key = $key;
-        $this->url = $url;
         $this->api_ver = $api_ver;
         $this->client = $client;
         $this->client_ver = $client_ver;
@@ -47,6 +46,11 @@ class Request extends OpenAir
     }
 
     public function addCommand(Command $command){
+        if ($command instanceof Auth) {
+            $this->addAuthCommand($command);
+            return;
+        }
+
         $this->commands[] = $command;
     }
 
@@ -132,7 +136,7 @@ class Request extends OpenAir
         $key->value = $this->key;
         $request->appendChild($key);
 
-        if(count($this->auth) > 0 && !$this->bAuthAdded){
+        if(null !== $this->auth && !$this->bAuthAdded){
             array_unshift($this->commands, $this->auth);
             $this->bAuthAdded = true;
         }
