@@ -15,11 +15,11 @@ class Request extends OpenAir
     private $api_ver;
     private $client;
     private $client_ver;
-    private $url ;
+    private $url = 'https://www.openair.com/api.pl';
     private $bDebug = false;
     private $bAuthAdded = false;
 
-    function __construct($namespace, $key, $url='https://www.openair.com/api.pl', $api_ver = '1.0', $client = 'test app', $client_ver = '1.1'){
+    function __construct($namespace, $key, $api_ver = '1.0', $client = 'test app', $client_ver = '1.1'){
         $this->namespace = $namespace;
         $this->key = $key;
         $this->url = $url;
@@ -30,6 +30,20 @@ class Request extends OpenAir
 
     public function setDebug($bDebug){
         $this->bDebug = $bDebug;
+    }
+
+    public function setUrl($companyId, $isSandbox=false)
+    {
+        // Example URL: https://<company-id>.app.sandbox.openair.com/api.pl
+
+        $companyId = strtolower($companyId);
+
+        $subdomainInfix = "";
+        if ($isSandbox) {
+            $subdomainInfix = ".sandbox";
+        }
+
+        $this->url = sprintf("https://%s.app%s.openair.com/api.pl", $companyId, $subdomainInfix);
     }
 
     public function addCommand(Command $command){
