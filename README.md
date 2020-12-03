@@ -12,11 +12,21 @@ A project I'm building for my company and wanted to write a comprehensive servic
 
 ## Installation
 
-Using the code is fairly simple.  Curently there's no installation method, just clone the code, and start editing the example file.  The autoloader will register all of the classes for you, so that should be included first.
+Using the code is fairly simple.  Curently there's no installation method, just clone the code, and start editing the example file.
+
+The included `composer.json` file defines a PSR-4 compatible solution for autoloading the library classes. Run the following command to generate the autoload files via composer:
+
+```
+composer dump-autoload
+```
+
+This will create a file `vendor/autoload.php` that should be `required` to use classes in the OpenAir namespace.
 
 ## API Reference
 
 Doc coming later.  For now, see example.php.
+
+See [The OpenAir XML API Guide](https://www.openair.com/download/OpenAirXMLAPIGuide.pdf) for additional details about the API that this library uses.
 
 ## Tests
 

@@ -45,13 +45,13 @@ $objResponse = $objRequest->execute();
 // let's be sure that this is an object we got back
 if($objResponse instanceof \OpenAir\Response){
 	// let's get the auth response from the command
-	$objAuthResponse = $objResponse->getCommandResposne('Auth');
+	$objAuthResponse = $objResponse->getCommandResponse('Auth');
 
 	// let's also be sure that the command was successful
 	if($objAuthResponse->getResponseStatus() == Command::STATUS_SUCCESS){
 	    // our command was successful.  Let's make sure that our read user command was successful 
 	    // before we start interacting with the object.
-	    $objReadResponse = $objResponse->getCommandResposne('Read');
+	    $objReadResponse = $objResponse->getCommandResponse('Read');
 	    if($objReadResponse->getResponseStatus() == Command::STATUS_SUCCESS){
 	    	// our read of student 304 was successful
 	    	$aryResponseData = $objReadResponse->getDataTypes();
