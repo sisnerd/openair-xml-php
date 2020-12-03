@@ -32,9 +32,28 @@ class Request extends OpenAir
         $this->commands[] = $command;
     }
 
+    public function setUrl($companyId, $isSandbox=false)
+    {
+        // Example URL: https://<company-id>.app.sandbox.openair.com/api.pl
+
+        $companyId = strtolower($companyId);
+
+        $subdomainInfix = "";
+        if ($isSandbox) {
+            $subdomainInfix = ".sandbox";
+        }
+
+        $this->url = sprintf("https://%s.app%s.openair.com/api.pl", $companyId, $subdomainInfix);
+
+        return $this;
+    }
+
     public function execute(){
         $xml = $this->_buildRequest();
-        if($this->bDebug)echo "<pre>REQUEST: ".$xml.PHP_EOL.PHP_EOL."</pre>";
+
+        if($this->bDebug)echo "URL: " . $this->url . PHP_EOL;
+        if($this->bDebug)echo "REQUEST: " . $xml . PHP_EOL . PHP_EOL;
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -43,17 +62,19 @@ class Request extends OpenAir
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         $result = curl_exec($ch);
+
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
         if($httpcode === 200){
             if($this->bDebug){
                 $dom = new \DOMDocument();
                 $dom->formatOutput = true;
                 $dom->loadXML($result);
-                echo "<pre>RESPONSE: ".$dom->saveXML()."</pre>";
-                //echo "RESPOSNE: ".$result.PHP_EOL.PHP_EOL;
+                echo "RESPONSE: " . $dom->saveXML();
             }
             return new Response($result);
         }else{
+            if($this->bDebug)echo "Response: " . $result . PHP_EOL;
             return $httpcode;
         }
     }
@@ -64,7 +85,7 @@ class Request extends OpenAir
         $request = $dom->createElement('request');
 
         // api version
-        $apiVer = $dom->createAttribute('API_ver');
+        $apiVer = $dom->createAttribute('API_version');
         $apiVer->value = $this->api_ver;
         $request->appendChild($apiVer);
 
