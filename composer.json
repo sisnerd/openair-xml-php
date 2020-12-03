@@ -1,0 +1,20 @@
+{
+    "name": "sumpygump/openair-xml-php",
+    "description": "Openair XML API library for PHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Curtis Holland",
+            "email": "curtis.holland@beaconfire.com"
+        },
+        {
+            "name": "Jansen Price",
+            "email": "jansen.price@nerdery.com"
+        }
+    ],
+    "autoload": {
+        "psr-4" : {
+            "OpenAir\\" : "src/OpenAir"
+        }
+    }
+}
