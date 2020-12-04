@@ -9,23 +9,23 @@ use OpenAir\DataTypes\Login;
 use OpenAir\Request;
 
 // Let's start a new Open Air request
-$objRequest = new Request(OA_NAMESPACE, OA_KEY);
+$request = new Request(OA_NAMESPACE, OA_KEY);
 
 // Turn debug on to see the communication between the 2 servers
-$objRequest->setDebug(true);
+$request->setDebug(true);
 
 // Set the company id in the URL and turn sandbox mode on
-$objRequest->setUrl(OA_COMPANY_ID, true);
+$request->setUrl(OA_COMPANY_ID, true);
 
 // Let's login
-$objRequest->addAuthCommand(new Auth(new Login(OA_COMPANY_ID, OA_USERNAME, OA_PASSWORD)));
+$request->addAuthCommand(new Auth(new Login(OA_COMPANY_ID, OA_USERNAME, OA_PASSWORD)));
 
-$objRequest->addCommand(new Whoami());
+$request->addCommand(new Whoami());
 
 // Execute the request, and an \OpenAir\Response will return
-$objResponse = $objRequest->execute();
+$response = $request->execute();
 
-$data = $objResponse->getCommandResponse('Whoami');
+$data = $response->getCommandResponse('Whoami');
 $users = $data->getResponseData();
 
 echo "User:\n";

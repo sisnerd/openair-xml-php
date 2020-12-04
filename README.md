@@ -36,6 +36,12 @@ define('OA_USERNAME', '__your_username__');
 define('OA_PASSWORD', '__your_password__');
 ```
 
+To run the examples after the `env.php` file is set up with your credentials, execute PHP from the command line like so:
+
+```
+php examples/00-auth.php
+```
+
 ## API Reference
 
 Doc coming later.  For now, see example.php.

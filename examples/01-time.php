@@ -7,16 +7,16 @@ use OpenAir\Commands\Time;
 use OpenAir\Request;
 
 // Let's start a new Open Air request
-$objRequest = new Request(OA_NAMESPACE, OA_KEY);
+$request = new Request(OA_NAMESPACE, OA_KEY);
 
 // Turn debug on to see the communication between the 2 servers
-$objRequest->setDebug(true);
+$request->setDebug(true);
 
 // Set the company id in the URL and turn sandbox mode on
-$objRequest->setUrl(OA_COMPANY_ID, true);
+$request->setUrl(OA_COMPANY_ID, true);
 
 // Add time command to request
-$objRequest->addCommand(new Time());
+$request->addCommand(new Time());
 
 // Execute the request, and an \OpenAir\Response will return
-$objResponse = $objRequest->execute();
+$response = $request->execute();

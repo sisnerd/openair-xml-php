@@ -12,7 +12,7 @@ use OpenAir\Request;
 $request = new Request(OA_NAMESPACE, OA_KEY);
 
 // Turn debug on to see the communication between the 2 servers
-$request->setDebug(true);
+//$request->setDebug(true);
 
 // Set the company id in the URL and turn sandbox mode on
 $request->setUrl(OA_COMPANY_ID, true);
@@ -20,8 +20,10 @@ $request->setUrl(OA_COMPANY_ID, true);
 // Let's login
 $request->addAuthCommand(new Auth(new Login(OA_COMPANY_ID, OA_USERNAME, OA_PASSWORD)));
 
+echo "Generating URL for uid 1 on the pm app\n";
+
 $request->addCommand(new MakeURL([
-    'uid' => '1014',
+    'uid' => '1',
     'page' => 'default-url',
     'app' => 'pm',
 ]));
@@ -31,3 +33,5 @@ $response = $request->execute();
 
 $data = $response->getCommandResponse('MakeURL');
 $urls = $data->getResponseData();
+
+echo "URL: " . $urls[0]->url . "\n";
