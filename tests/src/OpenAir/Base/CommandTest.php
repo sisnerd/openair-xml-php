@@ -71,6 +71,14 @@ final class CommandTest extends TestCase
         $this->assertSame(2, $command->getResponseStatus());
     }
 
+    public function testGetResponseStatusMessage()
+    {
+        $command = new MockCommand(['id' => 98]);
+        $command->responseCode = 2;
+
+        $this->assertSame('', $command->getResponseStatusMessage());
+    }
+
     public function testIsSuccess()
     {
         $command = new MockCommand(['id' => 98]);
