@@ -59,7 +59,7 @@ class Response extends OpenAir
                                 (int)$objXmlVal->Date->year
                             );
                             $objDataType->$key = $strDate;
-                        } elseif ($key == 'flags') {
+                        } elseif ($key == 'flags' || $key == 'permissions') {
                             $aryFlags = [];
                             foreach ($objXmlVal->Flag as $intKey => $objFlag) {
                                 $aryFlags[] = new Flag((string)$objFlag->name, (string)$objFlag->setting);
