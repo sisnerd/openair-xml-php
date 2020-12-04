@@ -8,8 +8,8 @@ class Approval extends DataType
 {
 
     protected $data = [
-		'cc' => null, //Email cc field.
-		'notes' => null, //Notes.
+        'cc' => null, //Email cc field.
+        'notes' => null, //Notes.
     ];
 
     function __construct()

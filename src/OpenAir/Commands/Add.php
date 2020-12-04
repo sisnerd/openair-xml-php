@@ -2,7 +2,6 @@
 
 namespace OpenAir\Commands;
 
-
 use OpenAir\Base\Command;
 
 class Add extends Command
@@ -12,17 +11,18 @@ class Add extends Command
         'enable_custom' => null
     ];
 
-    function _buildRequest(\DOMDocument $dom){
+    function _buildRequest(\DOMDocument $dom)
+    {
         $readCommandObj = $dom->createElement("Add");
-        foreach($this->attributes as $key => $val){
-            if(!is_null($val)){
+        foreach ($this->attributes as $key => $val) {
+            if (!is_null($val)) {
                 $objAttr = $dom->createAttribute($key);
                 $objAttr->value = $val;
                 $readCommandObj->appendChild($objAttr);
             }
         }
 
-        foreach($this->datatypes as $objDataType){
+        foreach ($this->datatypes as $objDataType) {
             $test = $objDataType->_buildRequest($dom);
             $readCommandObj->appendChild($test);
         }

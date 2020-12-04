@@ -2,7 +2,6 @@
 
 namespace OpenAir\Commands;
 
-
 use OpenAir\Base\Command;
 use OpenAir\Base\DataType;
 
@@ -47,38 +46,39 @@ class Read extends Command
         parent::__construct($aryAttributes);
     }
 
-    function _buildRequest(\DOMDocument $dom){
+    function _buildRequest(\DOMDocument $dom)
+    {
         $readCommandObj = $dom->createElement("Read");
-        foreach($this->attributes as $key => $val){
-            if(!is_null($val)){
-                if($key == 'filters'){
-                    if(count($this->attributes[$key]) > 0){
-                        if(array_key_exists('filter', $this->attributes[$key]) && $this->attributes[$key]['filter'] != ''){
+        foreach ($this->attributes as $key => $val) {
+            if (!is_null($val)) {
+                if ($key == 'filters') {
+                    if (count($this->attributes[$key]) > 0) {
+                        if (array_key_exists('filter', $this->attributes[$key]) && $this->attributes[$key]['filter'] != '') {
                             $objAttr = $dom->createAttribute('filter');
                             $objAttr->value = $this->attributes[$key]['filter'];
                             $readCommandObj->appendChild($objAttr);
                         }
 
-                        if(array_key_exists('field', $this->attributes[$key]) && $this->attributes[$key]['field'] != '') {
+                        if (array_key_exists('field', $this->attributes[$key]) && $this->attributes[$key]['field'] != '') {
                             $objAttr = $dom->createAttribute('field');
                             $objAttr->value = $this->attributes[$key]['field'];
                             $readCommandObj->appendChild($objAttr);
                         }
                     }
-                }else{
+                } else {
                     $objAttr = $dom->createAttribute($key);
                     $objAttr->value = $val;
                     $readCommandObj->appendChild($objAttr);
                 }
             }
         }
-        foreach($this->datatypes as $objDataType){
+        foreach ($this->datatypes as $objDataType) {
             $test = $objDataType->_buildRequest($dom);
             $readCommandObj->appendChild($test);
         }
-        if(count($this->returnvalues) > 0){
+        if (count($this->returnvalues) > 0) {
             $readResponse = $dom->createElement("_Return");
-            foreach($this->returnvalues as $val){
+            foreach ($this->returnvalues as $val) {
                 $xmlVal = $dom->createElement($val);
                 $readResponse->appendChild($xmlVal);
             }
@@ -87,15 +87,18 @@ class Read extends Command
         return $readCommandObj;
     }
 
-    function setReturnValues(array $fields){
+    function setReturnValues(array $fields)
+    {
         $this->returnvalues = $fields;
     }
 
-    function getType(){
+    function getType()
+    {
         return $this->attributes['type'];
     }
 
-    function setType($type){
+    function setType($type)
+    {
         $this->attributes['type'] = $type;
     }
 }

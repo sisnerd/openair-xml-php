@@ -39,7 +39,8 @@ class Auth extends Command
         parent::__construct();
     }
 
-    function _buildRequest(\DOMDocument $dom){
+    function _buildRequest(\DOMDocument $dom)
+    {
         //creates <Auth>
         $authCommandObj = parent::_buildRequest($dom);
 

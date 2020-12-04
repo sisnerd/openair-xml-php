@@ -2,7 +2,6 @@
 
 namespace OpenAir\Commands;
 
-
 use OpenAir\Base\Command;
 
 class Submit extends Command
@@ -22,8 +21,9 @@ class Submit extends Command
         parent::__construct($aryAttributes);
     }
 
-    public function getResponseData(){
-        if(!is_null($this->responseCode)){
+    public function getResponseData()
+    {
+        if (!is_null($this->responseCode)) {
             return $this->datatypes[0];
         }
         return null;

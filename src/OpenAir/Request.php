@@ -19,7 +19,8 @@ class Request extends OpenAir
     private $bDebug = false;
     private $bAuthAdded = false;
 
-    function __construct($namespace, $key, $api_ver = '1.0', $client = 'test app', $client_ver = '1.1'){
+    function __construct($namespace, $key, $api_ver = '1.0', $client = 'test app', $client_ver = '1.1')
+    {
         $this->namespace = $namespace;
         $this->key = $key;
         $this->api_ver = $api_ver;
@@ -27,11 +28,12 @@ class Request extends OpenAir
         $this->client_ver = $client_ver;
     }
 
-    public function setDebug($bDebug){
+    public function setDebug($bDebug)
+    {
         $this->bDebug = $bDebug;
     }
 
-    public function setUrl($companyId, $isSandbox=false)
+    public function setUrl($companyId, $isSandbox = false)
     {
         // Example URL: https://<company-id>.app.sandbox.openair.com/api.pl
 
@@ -50,7 +52,8 @@ class Request extends OpenAir
         return $this->url;
     }
 
-    public function addCommand(Command $command){
+    public function addCommand(Command $command)
+    {
         if ($command instanceof Auth) {
             $this->addAuthCommand($command);
             return;
@@ -59,32 +62,40 @@ class Request extends OpenAir
         $this->commands[] = $command;
     }
 
-    public function addAuthCommand(Auth $command){
+    public function addAuthCommand(Auth $command)
+    {
         $this->auth = $command;
     }
 
-    public function setCommands(array $commands){
-        foreach($commands as $command){
+    public function setCommands(array $commands)
+    {
+        foreach ($commands as $command) {
             $this->addCommand($command);
         }
     }
 
-    public function clearCommands(){
+    public function clearCommands()
+    {
         $this->commands = [];
         $this->bAuthAdded = false;
     }
 
-    public function execute(){
+    public function execute()
+    {
         $xml = $this->_buildRequest();
 
-        if($this->bDebug)echo "URL: " . $this->url . PHP_EOL;
-        if($this->bDebug)echo "REQUEST:\n" . $xml . PHP_EOL;
+        if ($this->bDebug) {
+            echo "URL: " . $this->url . PHP_EOL;
+        }
+        if ($this->bDebug) {
+            echo "REQUEST:\n" . $xml . PHP_EOL;
+        }
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS,$xml);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
@@ -92,8 +103,8 @@ class Request extends OpenAir
 
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-        if($httpcode === 200){
-            if($this->bDebug){
+        if ($httpcode === 200) {
+            if ($this->bDebug) {
                 $dom = new \DOMDocument();
                 $dom->formatOutput = true;
                 $dom->loadXML($result);
@@ -101,8 +112,8 @@ class Request extends OpenAir
             }
             $this->clearCommands();
             return new Response($result, $xml);
-        }else{
-            if($this->bDebug){
+        } else {
+            if ($this->bDebug) {
                 $info = curl_getinfo($ch);
                 print_r($info);
             }
@@ -110,13 +121,17 @@ class Request extends OpenAir
         }
     }
 
-    public function getXMLRequest(){
+    public function getXMLRequest()
+    {
         return $this->_buildRequest();
     }
 
-    private function _buildRequest(){
+    private function _buildRequest()
+    {
         $dom = new \DOMDocument();
-        if($this->bDebug)$dom->formatOutput = true;
+        if ($this->bDebug) {
+            $dom->formatOutput = true;
+        }
         $request = $dom->createElement('request');
 
         // api version
@@ -144,14 +159,14 @@ class Request extends OpenAir
         $key->value = $this->key;
         $request->appendChild($key);
 
-        if(null !== $this->auth && !$this->bAuthAdded){
+        if (null !== $this->auth && !$this->bAuthAdded) {
             array_unshift($this->commands, $this->auth);
             $this->bAuthAdded = true;
         }
 
-        foreach($this->commands as $objCommand){
+        foreach ($this->commands as $objCommand) {
             $xmlCommand = $objCommand->_buildRequest($dom);
-            if(!is_null($xmlCommand)){
+            if (!is_null($xmlCommand)) {
                 $request->appendChild($xmlCommand);
             }
         }

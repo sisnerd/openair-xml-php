@@ -24,32 +24,34 @@ class Command extends OpenAir
 
     protected $returnvalues = [];
 
-    public function __construct($aryAttributes = null){
-        if(!is_null($aryAttributes) && isset($this->attributes)){
-            foreach($aryAttributes as $key => $val){
-                if(array_key_exists($key, $this->attributes)){
+    public function __construct($aryAttributes = null)
+    {
+        if (!is_null($aryAttributes) && isset($this->attributes)) {
+            foreach ($aryAttributes as $key => $val) {
+                if (array_key_exists($key, $this->attributes)) {
                     $this->attributes[$key] = $val;
                 }
             }
         }
     }
 
-    public function _buildRequest(\DOMDocument $dom){
+    public function _buildRequest(\DOMDocument $dom)
+    {
         $ReflectionClass = new \ReflectionClass($this);
         $strRequest = $ReflectionClass->getShortName();
 
         $el = $dom->createElement($strRequest);
-        if(isset($this->attributes)){
-            foreach($this->attributes as $key => $val){
-                if(!is_null($val)){
+        if (isset($this->attributes)) {
+            foreach ($this->attributes as $key => $val) {
+                if (!is_null($val)) {
                     $objAttr = $dom->createAttribute($key);
                     $objAttr->value = $val;
                     $el->appendChild($objAttr);
                 }
             }
         }
-        if(isset($this->datatypes) && count($this->datatypes) > 0){
-            foreach($this->datatypes as $objDataType){
+        if (isset($this->datatypes) && count($this->datatypes) > 0) {
+            foreach ($this->datatypes as $objDataType) {
                 $test = $objDataType->_buildRequest($dom);
                 $el->appendChild($test);
             }
@@ -58,7 +60,8 @@ class Command extends OpenAir
         return $el;
     }
 
-    public function getResponseStatus(){
+    public function getResponseStatus()
+    {
         return $this->responseCode;
     }
 
@@ -67,22 +70,26 @@ class Command extends OpenAir
         return $this->getResponseStatus() == self::STATUS_SUCCESS;
     }
 
-    public function addDataType(DataType $datatype){
+    public function addDataType(DataType $datatype)
+    {
         $this->datatypes[] = $datatype;
     }
 
-    public function getResponseData(){
-        if(!is_null($this->responseCode)){
+    public function getResponseData()
+    {
+        if (!is_null($this->responseCode)) {
             return $this->datatypes;
         }
         return null;
     }
 
-    public function setReturnValues(array $fields){
+    public function setReturnValues(array $fields)
+    {
         $this->returnvalues = $fields;
     }
 
-    public function getReturnValues(){
+    public function getReturnValues()
+    {
         return $this->returnvalues;
     }
 }

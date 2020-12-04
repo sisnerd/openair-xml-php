@@ -2,7 +2,6 @@
 
 namespace OpenAir\Commands;
 
-
 use OpenAir\Base\Command;
 
 class CreateUser extends Command

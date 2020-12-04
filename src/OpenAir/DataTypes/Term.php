@@ -8,8 +8,8 @@ class Term extends DataType
 {
 
     protected $data = [
-		'name' => null, //The name for the term.
-		'display' => null, //Display the term as.
+        'name' => null, //The name for the term.
+        'display' => null, //Display the term as.
     ];
 
     function __construct()
