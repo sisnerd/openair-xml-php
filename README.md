@@ -30,4 +30,10 @@ See [The OpenAir XML API Guide](https://www.openair.com/download/OpenAirXMLAPIGu
 
 ## Tests
 
-Coming Soon
+To run the tests, use phpunit 7.5 (included in composer require-dev). To set up, be sure to run `composer update` to load in the dev dependencies.
+
+The run the test suite, use the following command:
+
+```
+cd tests && ../vendor/bin/phpunit . && cd ..
+```
