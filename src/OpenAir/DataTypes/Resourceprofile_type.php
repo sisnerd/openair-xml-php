@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Resourceprofile_type extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -19,9 +18,4 @@ class Resourceprofile_type extends DataType
         'type' => null, //The resourceprofile type. The entity on which this
         'attribute_set_id' => null, //The ID of the associated attribute set.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

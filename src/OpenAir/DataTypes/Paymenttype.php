@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Paymenttype extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -17,9 +16,4 @@ class Paymenttype extends DataType
         'default_status' => null, //Default receipt status, e.g. R =>
         'default_payment_type' => null, //A "1/0" field indicating whether this is
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

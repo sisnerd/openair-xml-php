@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Leave_accrual_transaction extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -20,9 +19,4 @@ class Leave_accrual_transaction extends DataType
         'userid' => null, //The ID of the associated user.
         'leave_accrual_ruleid' => null, //The ID of the associated accrual rule.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

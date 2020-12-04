@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Preference extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -16,9 +15,4 @@ class Preference extends DataType
         'userid' => null, //If the preference is for a user, this is the user ID.
         'setting' => null, //The preference data is stored in this field.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class User extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -122,7 +121,7 @@ class User extends DataType
         'picklist_label' => null, //Label as shown on form picklist.
     ];
 
-    function __construct($data = [])
+    public function __construct($data = [])
     {
         if (count($data) > 0) {
             foreach ($data as $key => $val) {

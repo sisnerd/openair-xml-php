@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class TagGroupAttribute extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -15,9 +14,4 @@ class TagGroupAttribute extends DataType
         'name' => null, //Name of the tag group attribute.
         'tag_groupid' => null, //The ID of the tag group this attribute is in.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

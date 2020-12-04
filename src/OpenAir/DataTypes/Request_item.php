@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Request_item extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.

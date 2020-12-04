@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Purchaseorder extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -44,9 +43,4 @@ class Purchaseorder extends DataType
         'ship_complete_only' => null, //A 1/0 field indicating that full order
         'prefix' => null, //A static alphanumeric purchase order number prefix.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

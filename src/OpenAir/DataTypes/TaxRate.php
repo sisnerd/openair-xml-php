@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class TaxRate extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -24,9 +23,4 @@ class TaxRate extends DataType
         'gst' => null, //The GST tax. Dated by the date field.
         'purchase_itemid' => null, //The ID of the associated purchase order item.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

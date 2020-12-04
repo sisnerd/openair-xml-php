@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class RateCardItem extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -20,7 +19,7 @@ class RateCardItem extends DataType
         'current' => null, //A 1/0 field indicating if the record is the current
     ];
 
-    function __construct($data = [])
+    public function __construct($data = [])
     {
         if (count($data) > 0) {
             foreach ($data as $key => $val) {

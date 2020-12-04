@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class ForexInput extends DataType
 {
-
     protected $data = [
         'symbol' => null, //Currency symbol. Must be for one of the multiple
         'startdate' => null, //Optional start date for currency being set.
@@ -18,9 +17,4 @@ class ForexInput extends DataType
         'created' => null, //Date the record was created.
         'updated' => null, //Date the record was last modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class PendingBooking extends DataType
 {
-
     protected $data = [
         'userid' => null, //The ID of the associated user.
         'startdate' => null, //The start date of the booking.
@@ -36,9 +35,4 @@ class PendingBooking extends DataType
         'customerid' => null, //The ID of the associated customer.
         'project_assignment_profile_id' => null, //The id of the associated project
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

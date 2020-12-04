@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class TaxLocation extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -26,9 +25,4 @@ class TaxLocation extends DataType
         'notes' => null, //Notes associated with this tax location.
         'gst_rate' => null, //The GST rate.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

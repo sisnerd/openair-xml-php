@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Project extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'user_filter' => null, //Also allow these users to edit the project if the
@@ -108,7 +107,7 @@ class Project extends DataType
         'picklist_label' => null, //Label as shown on form picklist.
     ];
 
-    function __construct($data = [])
+    public function __construct($data = [])
     {
         if (count($data) > 0) {
             foreach ($data as $key => $val) {

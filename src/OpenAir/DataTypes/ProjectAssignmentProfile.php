@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class ProjectAssignmentProfile extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique project_assignment_profile id. Automatically
         'created' => null, //Time the record was created
@@ -16,9 +15,4 @@ class ProjectAssignmentProfile extends DataType
         'updated' => null, //Time the record was last updated or modified
         'projectid' => null, //Id of the project to which this
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

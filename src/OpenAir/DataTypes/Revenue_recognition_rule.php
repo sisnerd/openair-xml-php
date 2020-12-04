@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Revenue_recognition_rule extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -59,9 +58,4 @@ class Revenue_recognition_rule extends DataType
         'category_5id' => null, //The ID of the associated category_5. Mutually
         'assigned_user' => null, //The user to assign to fixed fee recognition.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

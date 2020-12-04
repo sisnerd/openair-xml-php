@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Date extends DataType
 {
-
     protected $data = [
         'year' => null, //Year.
         'month' => null, //Month.
@@ -16,7 +15,7 @@ class Date extends DataType
         'second' => null, //Second.
     ];
 
-    function __construct($hour = null, $minute = null, $second = null, $month = null, $day = null, $year = null)
+    public function __construct($hour = null, $minute = null, $second = null, $month = null, $day = null, $year = null)
     {
         $ary = ['hour' => 'H', 'minute' => 'i', 'second' => 's', 'month' => 'n', 'day' => 'j', 'year' => 'Y'];
         foreach ($ary as $var => $dateStr) {

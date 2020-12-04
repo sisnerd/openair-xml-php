@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Costcategory extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'name' => null, //The name of the cost category.
@@ -16,9 +15,4 @@ class Costcategory extends DataType
         'updated' => null, //Time the record was last updated or modified.
         'externalid' => null, //If the record was imported from an external
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

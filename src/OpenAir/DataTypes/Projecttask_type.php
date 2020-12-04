@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Projecttask_type extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -17,9 +16,4 @@ class Projecttask_type extends DataType
         'suppress_notification' => null, //Suppress task notifications for this
         'picklist_label' => null, //Label as shown on form picklist.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

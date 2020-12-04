@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Item extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -29,9 +28,4 @@ class Item extends DataType
         'cost_is_fixed' => null, //A 1/0 field indicating whether the user is
         'picklist_label' => null, //Label as shown on form picklist.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

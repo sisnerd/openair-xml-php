@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Product extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -25,9 +24,4 @@ class Product extends DataType
         'notes' => null, //Notes associated with the product.
         'standard_cost' => null, //The current standard cost per unit of measure
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

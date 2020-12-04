@@ -1,5 +1,7 @@
 <?php
 
+namespace OpenAir\Tests;
+
 use PHPUnit\Framework\TestCase;
 use OpenAir\Request;
 use OpenAir\Commands\Auth;

@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Projectbillingrule extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -74,7 +73,7 @@ class Projectbillingrule extends DataType
         'assigned_user' => null, //The user to assign to fixed fee billings.
     ];
 
-    function __construct($data = [])
+    public function __construct($data = [])
     {
         if (count($data) > 0) {
             foreach ($data as $key => $val) {

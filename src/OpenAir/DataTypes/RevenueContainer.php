@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class RevenueContainer extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'number' => null, //The revenue_container number that increments by 1.
@@ -32,9 +31,4 @@ class RevenueContainer extends DataType
         'exported' => null, //Date and time the record was marked as exported.
         'prefix' => null, //A static alphanumeric revenue_container number prefix.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

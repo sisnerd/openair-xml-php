@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Address extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'salutation' => null, //Contact's salutation
@@ -28,7 +27,7 @@ class Address extends DataType
         'addr3' => null, //Address line 3
     ];
 
-    function __construct(array $data = [])
+    public function __construct(array $data = [])
     {
         if (count($data) > 0) {
             foreach ($data as $key => $val) {

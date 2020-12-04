@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Leave_accrual_rule extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -26,9 +25,4 @@ class Leave_accrual_rule extends DataType
         'timing' => null, //When the accrual is applied: S - start of the period or
         'amount' => null, //The number of hours per period.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

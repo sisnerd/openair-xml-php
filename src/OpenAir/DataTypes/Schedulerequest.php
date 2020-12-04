@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Schedulerequest extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -32,9 +31,4 @@ class Schedulerequest extends DataType
         'prefix' => null, //A static alphanumeric schedule request number prefix.
         'name' => null, //The name of the schedule request (Prefix + number).
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

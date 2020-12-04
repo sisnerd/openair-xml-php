@@ -6,7 +6,6 @@ use OpenAir\Base\Command;
 
 class Submit extends Command
 {
-
     const ERROR_CODE_INVALID_STATE = 1001;
     const ERROR_CODE_ERROR = 1002;
     const ERROR_CODE_WARNING = 1003;
@@ -16,7 +15,7 @@ class Submit extends Command
         'submit_warning' => null
     ];
 
-    function __construct(array $aryAttributes = null)
+    public function __construct(array $aryAttributes = null)
     {
         parent::__construct($aryAttributes);
     }

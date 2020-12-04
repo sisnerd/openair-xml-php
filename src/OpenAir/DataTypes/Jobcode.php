@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Jobcode extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -20,9 +19,4 @@ class Jobcode extends DataType
         'code' => null, //Optional accounting system code for integration with
         'active' => null, //A 1/0 field indicating if this is an active job code.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

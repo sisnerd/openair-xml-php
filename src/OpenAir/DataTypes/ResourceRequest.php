@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class ResourceRequest extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'number' => null, //The resource request tracking number.
@@ -24,9 +23,4 @@ class ResourceRequest extends DataType
         'notes' => null, //Notes field
         'customerid' => null, //The id of the associated customer.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

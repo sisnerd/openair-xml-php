@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Agreement_to_project extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'agreementid' => null, //The ID of the associated agreement.
@@ -16,9 +15,4 @@ class Agreement_to_project extends DataType
         'created' => null, //Time the record was created.
         'updated' => null, //Time the record was last modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

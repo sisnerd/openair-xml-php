@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Contact extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'addr' => null, //The contact's address.
@@ -28,9 +27,4 @@ class Contact extends DataType
         'exported' => null, //Date and time the record was marked as "exported".
         'picklist_label' => null, //Label as shown on form picklist.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

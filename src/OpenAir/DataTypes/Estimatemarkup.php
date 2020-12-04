@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Estimatemarkup extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'estimateid' => null, //The ID of the associated estimate.
@@ -17,9 +16,4 @@ class Estimatemarkup extends DataType
         'updated' => null, //Time the record was last updated or modified.
         'as_percentage' => null, //A 1/0 field indicating which expense markup to
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

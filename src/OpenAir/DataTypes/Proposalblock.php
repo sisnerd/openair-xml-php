@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Proposalblock extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -29,9 +28,4 @@ class Proposalblock extends DataType
         'minute' => null, //The number of minutes for a T block.
         'type' => null, //The type of the block: X - text only block, T - hourly
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

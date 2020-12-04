@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Fulfillment extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'purchaseorder_id' => null, //Associated purchase order ID.
@@ -23,9 +22,4 @@ class Fulfillment extends DataType
         'created' => null, //Time the record was created.
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Issue extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -36,9 +35,4 @@ class Issue extends DataType
         'submitted' => null, //Date the invoice was submitted.
         'approved' => null, //Date the invoice was approved.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

@@ -11,7 +11,7 @@ class Add extends Command
         'enable_custom' => null
     ];
 
-    function _buildRequest(\DOMDocument $dom)
+    public function _buildRequest(\DOMDocument $dom)
     {
         $readCommandObj = $dom->createElement("Add");
         foreach ($this->attributes as $key => $val) {

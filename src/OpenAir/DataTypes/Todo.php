@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Todo extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -24,9 +23,4 @@ class Todo extends DataType
         'finished' => null, //Date and time the task was finished.
         'start' => null, //Date and time the task is to be started.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

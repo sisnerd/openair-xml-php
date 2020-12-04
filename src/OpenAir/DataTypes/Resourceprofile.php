@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Resourceprofile extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -19,9 +18,4 @@ class Resourceprofile extends DataType
         'externalid' => null, //If the record was imported from an external system
         'type' => null, //The resourceprofile type. The entity on which this
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

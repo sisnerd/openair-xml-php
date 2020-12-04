@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Estimatelabor extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'estimateid' => null, //The ID of the associated estimate.
@@ -22,9 +21,4 @@ class Estimatelabor extends DataType
         'start_date' => null, //Start date for resource assignment.
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

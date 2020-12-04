@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Purchase_item extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -44,9 +43,4 @@ class Purchase_item extends DataType
         'productid' => null, //The ID of the associated product.
         'acct_date' => null, //The accounting period date of the purchase item.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Projectlocation extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -15,9 +14,4 @@ class Projectlocation extends DataType
         'name' => null, //The name for the project location.
         'active' => null, //A 1/0 field indicating whether this is active.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

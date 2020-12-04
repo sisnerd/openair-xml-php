@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class IssueSeverity extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -15,9 +14,4 @@ class IssueSeverity extends DataType
         'notes' => null, //Notes associated with the issue severity.
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

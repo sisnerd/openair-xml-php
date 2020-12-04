@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Slipstage extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -17,9 +16,4 @@ class Slipstage extends DataType
         'position' => null, //The position of the stage.
         'enable_slip_tab' => null, //Display slips of this stage in a separate
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

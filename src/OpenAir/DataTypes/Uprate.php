@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Uprate extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -23,7 +22,7 @@ class Uprate extends DataType
         'job_codeid' => null, //The ID of the associated job code.
     ];
 
-    function __construct($data = [])
+    public function __construct($data = [])
     {
         if (count($data) > 0) {
             foreach ($data as $key => $val) {

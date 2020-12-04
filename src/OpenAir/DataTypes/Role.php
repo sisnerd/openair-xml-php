@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Role extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -17,9 +16,4 @@ class Role extends DataType
         'external_id' => null, //If the record was imported from an external
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

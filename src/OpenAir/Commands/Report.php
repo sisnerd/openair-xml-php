@@ -10,7 +10,7 @@ class Report extends Command
         'type' => null
     ];
 
-    function __construct(array $aryAttributes = null)
+    public function __construct(array $aryAttributes = null)
     {
         parent::__construct($aryAttributes);
     }

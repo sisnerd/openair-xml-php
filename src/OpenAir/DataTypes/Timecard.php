@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Timecard extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -21,9 +20,4 @@ class Timecard extends DataType
         'timesheetid' => null, //The ID of the associated timesheet.
         'time_end' => null, //Time they stopped working.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

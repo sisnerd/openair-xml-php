@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class SlipProjection extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -51,9 +50,4 @@ class SlipProjection extends DataType
         'acct_date' => null, //The accounting period date of the task.
         'job_codeid' => null, //The ID of the associated job code.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

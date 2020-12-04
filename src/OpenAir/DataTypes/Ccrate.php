@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Ccrate extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'categoryid' => null, //The ID of the category this rate is associated
@@ -17,9 +16,4 @@ class Ccrate extends DataType
         'customerid' => null, //The ID of the customer this rate is associated
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

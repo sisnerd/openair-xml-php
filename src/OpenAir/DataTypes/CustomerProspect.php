@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class CustomerProspect extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'addr' => null, //The prospective customer's address.
@@ -49,9 +48,4 @@ class CustomerProspect extends DataType
         'te_include' => null, //A 1/0 field indicating whether an Expense Report
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

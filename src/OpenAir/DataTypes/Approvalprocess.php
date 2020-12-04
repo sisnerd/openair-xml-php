@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Approvalprocess extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'name' => null, //The name used for display in popups and lists.
@@ -14,9 +13,4 @@ class Approvalprocess extends DataType
         'updated' => null, //Time the record was last modified.
         'created' => null, //Time the record was created.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

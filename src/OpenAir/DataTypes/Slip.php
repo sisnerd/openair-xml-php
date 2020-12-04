@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Slip extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -62,9 +61,4 @@ class Slip extends DataType
         'gl_code' => null, //The fixed code 1234455454.
         'skip_recognition' => null, //A "1/0" field indicating if this record
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

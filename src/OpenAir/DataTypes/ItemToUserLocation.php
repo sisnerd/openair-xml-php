@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class ItemToUserLocation extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'itemid' => null, //The ID of the associated item.
@@ -15,9 +14,4 @@ class ItemToUserLocation extends DataType
         'created' => null, //Time the record was created.
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class TargetUtilization extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -17,9 +16,4 @@ class TargetUtilization extends DataType
         'percentage' => null, //Target utilization for this user as a percentage.
         'dirty' => null, //A 2/1/0 field: 0 - Clean, 1 - Dirty, and 2 - Inprogress.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

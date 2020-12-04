@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class BookingByDay extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'date' => null, //The date of the booking.
@@ -21,9 +20,4 @@ class BookingByDay extends DataType
         'created' => null, //Time the record was created.
         'updated' => null, //Time the record was last modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

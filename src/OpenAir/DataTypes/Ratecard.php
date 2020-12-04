@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Ratecard extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -15,9 +14,4 @@ class Ratecard extends DataType
         'name' => null, //The name of the rate card.
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Purchaser extends DataType
 {
-
     protected $data = [
         'Purchaser' => null, //
         'id' => null, //Unique ID. Automatically assigned by the system.
@@ -22,9 +21,4 @@ class Purchaser extends DataType
         'ship_complete_only' => null, //The default for the 1/0 field indicating
         'active' => null, //A 1/0 field indicating where this is designated as an
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

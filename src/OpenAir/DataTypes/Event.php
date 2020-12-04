@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Event extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'contact_id' => null, //The ID of the associated contact.
@@ -19,9 +18,4 @@ class Event extends DataType
         'updated' => null, //Time the record was last updated or modified.
         'customerid' => null, //The id of the associated customer.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

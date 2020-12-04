@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class RevenueProjection extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -70,9 +69,4 @@ class RevenueProjection extends DataType
         'cost_includes_tax' => null, //A 1/0 field indicating whether the cost
         'exported' => null, //Date and time the record was marked as exported.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class TaskTimecard extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -36,9 +35,4 @@ class TaskTimecard extends DataType
         'category_4id' => null, //The ID of the associated category_4.
         'category_5id' => null, //The ID of the associated category_5.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

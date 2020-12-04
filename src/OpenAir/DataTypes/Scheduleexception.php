@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Scheduleexception extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -21,9 +20,4 @@ class Scheduleexception extends DataType
         'timetypeid' => null, //The ID of the associated time type.
         'schedule_request_itemid' => null, //The ID of the schedule change item
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

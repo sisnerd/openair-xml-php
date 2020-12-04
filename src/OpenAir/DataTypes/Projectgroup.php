@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Projectgroup extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'assigned_users' => null, //The users assigned to this project group. Can
@@ -16,9 +15,4 @@ class Projectgroup extends DataType
         'name' => null, //The name for the project group.
         'active' => null, //A 1/0 field indicating whether this is active.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

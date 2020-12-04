@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Notes extends DataType
 {
-
     protected $data = [
         'name' => null, //Name.
         'user_id' => null, //ID of the user.
@@ -14,9 +13,4 @@ class Notes extends DataType
         'created' => null, //Time the record was created.
         'updated' => null, //Time the record was last modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

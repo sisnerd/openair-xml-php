@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Actualcost extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'name' => null, //The name of the actual cost. This field is never
@@ -22,9 +21,4 @@ class Actualcost extends DataType
         'cost_typeid' => null, //The ID of the cost_type.
         'is_accrual' => null, //A 1/0 field indicating whether this actual cost is
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

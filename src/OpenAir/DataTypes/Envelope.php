@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Envelope extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'totreimburse' => null, //The total amount of reimbursable expenses in the
@@ -37,9 +36,4 @@ class Envelope extends DataType
         'thin_client_id' => null, //Used by thin clients to reconcile imported
         'acct_date' => null, //The accounting period date of the envelope.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

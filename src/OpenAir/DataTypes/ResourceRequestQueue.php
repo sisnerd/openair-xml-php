@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class ResourceRequestQueue extends DataType
 {
-
     protected $data = [
         'date_end' => null, //The ending date of the resource request queue.
         'status' => null, //The status of the resource request queue:
@@ -21,9 +20,4 @@ class ResourceRequestQueue extends DataType
         'customerid' => null, //The id of the associated customer.
         'slots' => null, //The number of slots available in this queue.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

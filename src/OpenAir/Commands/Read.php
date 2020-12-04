@@ -34,32 +34,36 @@ class Read extends Command
         'enable_custom' => null,
         'filters' => [
             'filter' => '',
-            'field' => ''
+            'field' => '',
         ],
-        'fields' => null
+        'fields' => null,
     ];
 
     protected $returnvalues = [];
 
-    function __construct(array $aryAttributes = null)
+    public function __construct(array $aryAttributes = null)
     {
         parent::__construct($aryAttributes);
     }
 
-    function _buildRequest(\DOMDocument $dom)
+    public function _buildRequest(\DOMDocument $dom)
     {
         $readCommandObj = $dom->createElement("Read");
         foreach ($this->attributes as $key => $val) {
             if (!is_null($val)) {
                 if ($key == 'filters') {
                     if (count($this->attributes[$key]) > 0) {
-                        if (array_key_exists('filter', $this->attributes[$key]) && $this->attributes[$key]['filter'] != '') {
+                        if (array_key_exists('filter', $this->attributes[$key])
+                            && $this->attributes[$key]['filter'] != ''
+                        ) {
                             $objAttr = $dom->createAttribute('filter');
                             $objAttr->value = $this->attributes[$key]['filter'];
                             $readCommandObj->appendChild($objAttr);
                         }
 
-                        if (array_key_exists('field', $this->attributes[$key]) && $this->attributes[$key]['field'] != '') {
+                        if (array_key_exists('field', $this->attributes[$key])
+                            && $this->attributes[$key]['field'] != ''
+                        ) {
                             $objAttr = $dom->createAttribute('field');
                             $objAttr->value = $this->attributes[$key]['field'];
                             $readCommandObj->appendChild($objAttr);
@@ -87,17 +91,17 @@ class Read extends Command
         return $readCommandObj;
     }
 
-    function setReturnValues(array $fields)
+    public function setReturnValues(array $fields)
     {
         $this->returnvalues = $fields;
     }
 
-    function getType()
+    public function getType()
     {
         return $this->attributes['type'];
     }
 
-    function setType($type)
+    public function setType($type)
     {
         $this->attributes['type'] = $type;
     }

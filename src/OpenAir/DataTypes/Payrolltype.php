@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Payrolltype extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -17,9 +16,4 @@ class Payrolltype extends DataType
         'updated' => null, //Time the record was last updated or modified.
         'picklist_label' => null, //Label as shown on form picklist.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

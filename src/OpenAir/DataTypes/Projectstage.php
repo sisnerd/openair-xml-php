@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Projectstage extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -24,9 +23,4 @@ class Projectstage extends DataType
         'enable_pricing' => null, //Is project pricing enabled at this stage. Off
         'picklist_label' => null, //Label as shown on form picklist.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

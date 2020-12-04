@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Schedulerequest_item extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -24,9 +23,4 @@ class Schedulerequest_item extends DataType
         'categoryid' => null, //The ID of the associated category.
         'externalid' => null, //If the record was imported from an external system
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

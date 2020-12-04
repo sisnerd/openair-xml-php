@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Customerpo extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'number' => null, //The customerpo number.
@@ -25,9 +24,4 @@ class Customerpo extends DataType
         'acct_date' => null, //The accounting period date of the customerpo.
         'picklist_label' => null, //Label as shown on form picklist.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

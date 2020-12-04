@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Resourcesearch extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'include_inactive_resources' => null, //A "1/0" field. Include inactive
@@ -27,9 +26,4 @@ class Resourcesearch extends DataType
         'include_generic_resources' => null, //A "1/0" field. Include generic
         'external_id' => null, //If the record was imported from an external
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

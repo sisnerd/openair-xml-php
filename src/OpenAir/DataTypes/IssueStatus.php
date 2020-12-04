@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class IssueStatus extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'name' => null, //The name of the issue status.
@@ -14,9 +13,4 @@ class IssueStatus extends DataType
         'created' => null, //Time the record was created.
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

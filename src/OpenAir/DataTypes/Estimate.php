@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Estimate extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'hide_expense' => null, //A 1/0 field indicating if expenses should be
@@ -17,9 +16,4 @@ class Estimate extends DataType
         'customerid' => null, //The ID of the associated customer.
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

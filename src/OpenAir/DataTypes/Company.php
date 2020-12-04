@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Company extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'addr' => null, //The company's address.
@@ -24,9 +23,4 @@ class Company extends DataType
         'workscheduleid' => null, //The ID of the associated primary account
         'flags' => null, //Company-specific flags.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

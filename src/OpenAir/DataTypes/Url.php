@@ -6,12 +6,11 @@ use OpenAir\Base\DataType;
 
 class Url extends DataType
 {
-
     protected $data = [
         'url' => null
     ];
 
-    function __construct($data = [])
+    public function __construct($data = [])
     {
         if (count($data) > 0) {
             foreach ($data as $key => $val) {

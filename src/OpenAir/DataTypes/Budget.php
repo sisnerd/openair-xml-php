@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Budget extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'date' => null, //The date of the budget entry.
@@ -21,9 +20,4 @@ class Budget extends DataType
         'updated' => null, //Time the record was last modified.
         'categoryid' => null, //The ID of the associated category.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

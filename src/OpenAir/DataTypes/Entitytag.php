@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Entitytag extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'default_for_entity' => null, //A 1/0 field indicating whether this is the
@@ -21,9 +20,4 @@ class Entitytag extends DataType
         'tag_group_attribute_name' => null, //The name of the associated tag group
         'tag_group_id' => null, //The ID of the associated tag group attribute.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

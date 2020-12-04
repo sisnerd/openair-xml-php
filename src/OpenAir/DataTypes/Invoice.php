@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Invoice extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -45,9 +44,4 @@ class Invoice extends DataType
         'original_invoiceid' => null, //The original invoice ID for credit
         'attachmentid' => null, //The ID of the associated attachment.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

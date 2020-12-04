@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class BillingSplit extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'splipid' => null, //The id of the slip that was created.
@@ -15,9 +14,4 @@ class BillingSplit extends DataType
         'updated' => null, //Time the record was last modified.
         'created' => null, //Time the record was created.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

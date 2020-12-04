@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Estimateadjustment extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -17,9 +16,4 @@ class Estimateadjustment extends DataType
         'adjustment_type' => null, //A 1/0 field indicating the adjustment is for
         'amount_type' => null, //A 1/0 field indicating the type of the amount
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

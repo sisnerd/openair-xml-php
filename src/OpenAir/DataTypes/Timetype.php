@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Timetype extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -20,9 +19,4 @@ class Timetype extends DataType
         'code' => null, //Optional accounting system code for integration with
         'picklist_label' => null, //Label as shown on form picklist.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

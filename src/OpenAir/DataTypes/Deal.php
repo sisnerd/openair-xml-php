@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Deal extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'closed' => null, //When this deal was closed.
@@ -24,9 +23,4 @@ class Deal extends DataType
         'exported' => null, //Date and time the record was marked as exported.
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

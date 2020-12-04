@@ -33,13 +33,13 @@ class Auth extends Command
         "423" => "No permissions to read ServerStatus data"
     ];
 
-    function __construct(\OpenAir\DataTypes\Login $loginObject = null)
+    public function __construct(\OpenAir\DataTypes\Login $loginObject = null)
     {
         $this->login_object = $loginObject;
         parent::__construct();
     }
 
-    function _buildRequest(\DOMDocument $dom)
+    public function _buildRequest(\DOMDocument $dom)
     {
         //creates <Auth>
         $authCommandObj = parent::_buildRequest($dom);

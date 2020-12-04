@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Estimateexpense extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'estimateid' => null, //The ID of the associated estimate.
@@ -21,9 +20,4 @@ class Estimateexpense extends DataType
         'price' => null, //The cost of the expense. Dated by the date field.
         'updated' => null, //Time the record was last updated or modified.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

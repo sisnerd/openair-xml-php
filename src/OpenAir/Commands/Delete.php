@@ -6,7 +6,6 @@ use OpenAir\Base\Command;
 
 class Delete extends Command
 {
-
     const ERROR_CANNOT_DELETE = 701; // FAILED DEPENDENCY CHECK
     const ERROR_INVALID_NOTE = 702;
 
@@ -14,12 +13,12 @@ class Delete extends Command
         'type' => null
     ];
 
-    function __construct(array $aryAttributes = null)
+    public function __construct(array $aryAttributes = null)
     {
         parent::__construct($aryAttributes);
     }
 
-    function _buildRequest(\DOMDocument $dom)
+    public function _buildRequest(\DOMDocument $dom)
     {
         $readCommandObj = $dom->createElement("Delete");
         foreach ($this->attributes as $key => $val) {

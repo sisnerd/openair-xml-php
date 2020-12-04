@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class BookingType extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'priority' => null, //The priority of the booking type (1 - 9).
@@ -17,9 +16,4 @@ class BookingType extends DataType
         'updated' => null, //Time the record was last modified.
         'picklist_label' => null, //Label as shown on form picklist.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

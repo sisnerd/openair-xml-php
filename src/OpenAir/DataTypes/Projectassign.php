@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Projectassign extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -19,7 +18,7 @@ class Projectassign extends DataType
         'allocation' => null, //The percentage of time the associated user is
     ];
 
-    function __construct($data = [])
+    public function __construct($data = [])
     {
         if (count($data) > 0) {
             foreach ($data as $key => $val) {

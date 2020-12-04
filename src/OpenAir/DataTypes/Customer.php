@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Customer extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'addr' => null, //The customer's address.
@@ -51,7 +50,7 @@ class Customer extends DataType
         'picklist_label' => null, //Label as shown on form picklist.
     ];
 
-    function __construct($data = [])
+    public function __construct($data = [])
     {
         if (count($data) > 0) {
             foreach ($data as $key => $val) {

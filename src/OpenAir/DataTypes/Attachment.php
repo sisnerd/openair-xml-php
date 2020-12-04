@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Attachment extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'file_name' => null, //The true attachment name, as provided by the user on upload.
@@ -24,9 +23,4 @@ class Attachment extends DataType
         'owner_type' => null, //The owner of this attachment, e.g. 'User', 'Envelope', 'Ticket', 'Timesheet'
         'name' => null, //The display name of the attachment.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

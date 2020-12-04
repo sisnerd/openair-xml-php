@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Payment extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -21,9 +20,4 @@ class Payment extends DataType
         'bulk_paymentid' => null, //The ID of the bulk_payment transaction if this
         'externalid' => null, //If the record was imported from an external system
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

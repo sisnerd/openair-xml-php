@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Hierarchy extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -22,9 +21,4 @@ class Hierarchy extends DataType
         'primary_user_filterset' => null, //A 1/0 field indicating whether this
         'type' => null, //The type (table name) of the hierarchy: customer,
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

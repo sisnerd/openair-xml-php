@@ -19,7 +19,7 @@ class Request extends OpenAir
     private $bDebug = false;
     private $bAuthAdded = false;
 
-    function __construct($namespace, $key, $api_ver = '1.0', $client = 'test app', $client_ver = '1.1')
+    public function __construct($namespace, $key, $api_ver = '1.0', $client = 'test app', $client_ver = '1.1')
     {
         $this->namespace = $namespace;
         $this->key = $key;

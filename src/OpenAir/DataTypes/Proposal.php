@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Proposal extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -32,9 +31,4 @@ class Proposal extends DataType
         'created_by' => null, //The ID of the user who created this proposal.
         'expires' => null, //The date the proposal is valid until.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

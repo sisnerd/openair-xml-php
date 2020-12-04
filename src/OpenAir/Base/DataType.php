@@ -6,7 +6,7 @@ use OpenAir\OpenAir;
 
 class DataType extends OpenAir
 {
-    function __construct($data = [])
+    public function __construct($data = [])
     {
         if (count($data) > 0) {
             $nonexistantkey = [];
@@ -25,7 +25,7 @@ class DataType extends OpenAir
         }
     }
 
-    function __get($name)
+    public function __get($name)
     {
         if (isset($this->data)) {
             if (array_key_exists($name, $this->data)) {
@@ -34,7 +34,7 @@ class DataType extends OpenAir
         }
     }
 
-    function __set($name, $value)
+    public function __set($name, $value)
     {
         if (isset($this->data)) {
             if (array_key_exists($name, $this->data)) {

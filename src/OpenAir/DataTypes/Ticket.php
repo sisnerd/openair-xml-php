@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Ticket extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -53,9 +52,4 @@ class Ticket extends DataType
         'thin_client_id' => null, //Used by thin clients to reconcile imported
         'user_locationid' => null, //The location ID for this user.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

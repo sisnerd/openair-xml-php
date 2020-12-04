@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Category extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'name' => null, //The category name.
@@ -25,9 +24,4 @@ class Category extends DataType
         'notes' => null, //Category notes.
         'picklist_label' => null, //Label as shown on form picklist.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

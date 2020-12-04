@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Booking_request extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'number' => null, //The booking_request number that increments by 1.
@@ -36,9 +35,4 @@ class Booking_request extends DataType
         'owner_id' => null, //The id of the associated user creating the booking
         'prefix' => null, //A static alphanumeric booking_request number prefix.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class CustField extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'userid' => null, //The ID of user who created or owns this custom field.
@@ -35,9 +34,4 @@ class CustField extends DataType
         'never_copy' => null, //A 1/0 field indicating if the field can be cloned.
         'hidden_data_entry' => null, //A 1/0 field indicating whether the custom
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

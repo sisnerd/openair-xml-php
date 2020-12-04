@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Purchaserequest extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -35,9 +34,4 @@ class Purchaserequest extends DataType
         'exported' => null, //Date and time the record was marked as exported.
         'prefix' => null, //A static alphanumeric purchase request number prefix.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

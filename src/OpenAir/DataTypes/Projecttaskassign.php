@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Projecttaskassign extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -23,7 +22,7 @@ class Projecttaskassign extends DataType
         'booking_id' => null, //The id of the associated booking.
     ];
 
-    function __construct($data = [])
+    public function __construct($data = [])
     {
         if (count($data) > 0) {
             foreach ($data as $key => $val) {

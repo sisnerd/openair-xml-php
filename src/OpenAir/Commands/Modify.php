@@ -6,19 +6,17 @@ use OpenAir\Base\Command;
 
 class Modify extends Command
 {
-
-
     protected $attributes = [
         'type' => null,
         'enable_custom' => null
     ];
 
-    function __construct(array $aryAttributes = null)
+    public function __construct(array $aryAttributes = null)
     {
         parent::__construct($aryAttributes);
     }
 
-    function _buildRequest(\DOMDocument $dom)
+    public function _buildRequest(\DOMDocument $dom)
     {
         $readCommandObj = $dom->createElement("Modify");
         foreach ($this->attributes as $key => $val) {

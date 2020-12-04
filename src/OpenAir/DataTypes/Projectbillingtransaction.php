@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Projectbillingtransaction extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -40,9 +39,4 @@ class Projectbillingtransaction extends DataType
         'agreementid' => null, //The ID of the associated agreement.
         'payroll_typeid' => null, //The ID of the associated payroll type.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

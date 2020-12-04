@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class LoadedCost extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -23,9 +22,4 @@ class LoadedCost extends DataType
         'start' => null, //Start date for the loaded cost for historical records.
         'Ic_level' => null, //If multiple loaded costs are used, this holds the
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }

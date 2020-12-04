@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class HierarchyNode extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'hierarchyid' => null, //The ID of the associated hierarchy.
@@ -21,9 +20,4 @@ class HierarchyNode extends DataType
         'externalid' => null, //If the record was imported from an external
         'notes' => null, //Notes related to the hierarchy node.
     ];
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 }
