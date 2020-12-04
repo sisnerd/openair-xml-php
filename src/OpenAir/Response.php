@@ -11,7 +11,7 @@ class Response extends OpenAir
     private $commands = [];
     private $strResponse;
 
-    function __construct($strXMLResponse)
+    public function __construct($strXMLResponse)
     {
         $this->strResponse = $strXMLResponse;
         $objXML = new \SimpleXMLElement($strXMLResponse);

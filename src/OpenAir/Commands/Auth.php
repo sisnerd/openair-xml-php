@@ -3,6 +3,7 @@
 namespace OpenAir\Commands;
 
 use OpenAir\Base\Command;
+use OpenAir\DataTypes\Login;
 
 class Auth extends Command
 {
@@ -39,9 +40,18 @@ class Auth extends Command
     }
 
     function _buildRequest(\DOMDocument $dom){
-        $authCommandObj = parent::_buildRequest($dom); //creates <Auth>
-        $loginNode = $this->login_object->_buildRequest($dom); // creates <Login> and data
-        $authCommandObj->appendChild($loginNode); //this appends <Login> to <Auth> resulting in <Auth><Login></Login></Auth>
+        //creates <Auth>
+        $authCommandObj = parent::_buildRequest($dom);
+
+        if (!$this->login_object) {
+            $this->login_object = new Login();
+        }
+
+        // creates <Login> and data
+        $loginNode = $this->login_object->_buildRequest($dom);
+        //this appends <Login> to <Auth> resulting in <Auth><Login></Login></Auth>
+        $authCommandObj->appendChild($loginNode);
+
         return $authCommandObj;
     }
 }

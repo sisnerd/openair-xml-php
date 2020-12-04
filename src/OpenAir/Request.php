@@ -45,6 +45,11 @@ class Request extends OpenAir
         $this->url = sprintf("https://%s.app%s.openair.com/api.pl", $companyId, $subdomainInfix);
     }
 
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
     public function addCommand(Command $command){
         if ($command instanceof Auth) {
             $this->addAuthCommand($command);
@@ -73,7 +78,7 @@ class Request extends OpenAir
         $xml = $this->_buildRequest();
 
         if($this->bDebug)echo "URL: " . $this->url . PHP_EOL;
-        if($this->bDebug)echo "REQUEST: " . $xml . PHP_EOL . PHP_EOL;
+        if($this->bDebug)echo "REQUEST:\n" . $xml . PHP_EOL;
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
@@ -92,7 +97,7 @@ class Request extends OpenAir
                 $dom = new \DOMDocument();
                 $dom->formatOutput = true;
                 $dom->loadXML($result);
-                echo "RESPONSE: " . $dom->saveXML();
+                echo "RESPONSE:\n" . $dom->saveXML();
             }
             $this->clearCommands();
             return new Response($result, $xml);
