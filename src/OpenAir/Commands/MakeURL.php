@@ -13,11 +13,6 @@ class MakeURL extends Command
         'arg' => null,
     ];
 
-    public function __construct(array $aryAttributes = null)
-    {
-        parent::__construct($aryAttributes);
-    }
-
     public function _buildRequest(\DOMDocument $dom)
     {
         $makeUrlCommandObj = $dom->createElement("MakeURL");

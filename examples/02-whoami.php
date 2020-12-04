@@ -12,7 +12,7 @@ use OpenAir\Request;
 $objRequest = new Request(OA_NAMESPACE, OA_KEY);
 
 // Turn debug on to see the communication between the 2 servers
-//$objRequest->setDebug(true);
+$objRequest->setDebug(true);
 
 // Set the company id in the URL and turn sandbox mode on
 $objRequest->setUrl(OA_COMPANY_ID, true);

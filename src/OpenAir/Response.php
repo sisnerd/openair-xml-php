@@ -15,31 +15,39 @@ class Response extends OpenAir
     {
         $this->strResponse = $strXMLResponse;
         $objXML = new \SimpleXMLElement($strXMLResponse);
+
         foreach ($objXML as $strOrigCommand => $aryDataTypes) {
-            $strCommand = '\\OpenAir\\Commands\\'.$strOrigCommand;
+            $strCommand = '\\OpenAir\\Commands\\' . $strOrigCommand;
+
             if (class_exists($strCommand)) {
                 $objCommand = new $strCommand();
             } else {
                 $objCommand = new \stdClass();
             }
-            $intResponseCode = (int)$aryDataTypes[0]->attributes()['status'][0];
-            //$objCommand->setResponseStatus((int)$aryDataTypes[0]->attributes()['status'][0]);
+
+            $intResponseCode = 0;
+            if (isset($aryDataTypes[0]->attributes()['status'])) {
+                $intResponseCode = (int)$aryDataTypes[0]->attributes()['status'][0];
+            }
+
             $objCommand->responseCode = $intResponseCode;
+
             if ($strOrigCommand == "MakeURL") {
                 $objDataType = new Url();
                 $objDataType->url = (string)$aryDataTypes[0];
                 $objCommand->addDataType($objDataType);
             } else {
-                foreach ($aryDataTypes as $dataType => $objRespnseDataDataType) {
-                    $strDataType = '\\OpenAir\\DataTypes\\'.$dataType;
-                    if (class_exists($strCommand)) {
+                foreach ($aryDataTypes as $dataType => $objResponseDataDataType) {
+                    $strDataType = '\\OpenAir\\DataTypes\\' . $dataType;
+                    if (class_exists($strDataType)) {
                         $objDataType = new $strDataType();
                     } else {
                         $objDataType = new \stdClass();
                     }
-                    foreach ($objRespnseDataDataType as $key => $objXmlVal) {
+
+                    foreach ($objResponseDataDataType as $key => $objXmlVal) {
                         if (count($objXmlVal) == 0) {
-                            $objDataType->$key = (string)$objXmlVal;
+                            $objDataType->$key = (string) $objXmlVal;
                         } elseif (count($objXmlVal) == 1 && isset($objXmlVal->Date)) {
                             //mktime(hour, min, sec, month, day, year)
                             $strDate = mktime(
@@ -64,13 +72,17 @@ class Response extends OpenAir
                             }
                             $objDataType->$key = $objAddress;
                         } else {
-                            throw new \Exception('Unsure how to handle datatype '.$key);
+                            throw new \Exception('Unsure how to handle nested datatype ' . $key);
                         }
                     }
-                    $objCommand->addDataType($objDataType);
+
+                    if ($objCommand instanceof \StdClass || $objDataType instanceof \StdClass) {
+                        $objCommand->{$dataType} = $objDataType;
+                    } else {
+                        $objCommand->addDataType($objDataType);
+                    }
                 }
             }
-
 
             if (in_array($strOrigCommand, ['Auth', 'Whoami', 'MakeURL', 'Submit'])) {
                 $this->commands[$strOrigCommand] = $objCommand;
@@ -88,6 +100,8 @@ class Response extends OpenAir
         if (array_key_exists($strCommand, $this->commands)) {
             return $this->commands[$strCommand];
         }
+
+        return null;
     }
 
     /**

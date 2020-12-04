@@ -15,9 +15,11 @@ class Flag extends DataType
     public function __construct($name = null, $setting = null)
     {
         parent::__construct();
+
         if (!is_null($name)) {
             $this->data['name'] = $name;
         }
+
         if (!is_null($setting)) {
             $this->data['setting'] = $setting;
         }

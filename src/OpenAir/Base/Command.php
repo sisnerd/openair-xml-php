@@ -41,6 +41,7 @@ class Command extends OpenAir
         $strRequest = $ReflectionClass->getShortName();
 
         $el = $dom->createElement($strRequest);
+
         if (isset($this->attributes)) {
             foreach ($this->attributes as $key => $val) {
                 if (!is_null($val)) {
@@ -50,6 +51,7 @@ class Command extends OpenAir
                 }
             }
         }
+
         if (isset($this->datatypes) && count($this->datatypes) > 0) {
             foreach ($this->datatypes as $objDataType) {
                 $test = $objDataType->_buildRequest($dom);
