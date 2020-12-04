@@ -2,10 +2,6 @@
 
 This project is designed to interact cleanly with NetSuite's OpenAir Application using XML and PHP.
 
-## Code Example
-
-see example.php
-
 ## Motivation
 
 A project I'm building for my company and wanted to write a comprehensive service to interact with the API
@@ -21,6 +17,24 @@ composer dump-autoload
 ```
 
 This will create a file `vendor/autoload.php` that should be `required` to use classes in the OpenAir namespace.
+
+## Code Example
+
+There are a few examples in the directory `examples`
+
+To run them, you must copy the file `examples/env.php.dist` to `examples/env.php`, then edit that file to include the correct credentials for your sandbox or production instance of openair.
+
+The `env.php` file looks like this:
+
+```
+<?php
+
+define('OA_NAMESPACE', 'default');
+define('OA_KEY', '__your_key__');
+define('OA_COMPANY_ID', '__your_company_id__');
+define('OA_USERNAME', '__your_username__');
+define('OA_PASSWORD', '__your_password__');
+```
 
 ## API Reference
 
