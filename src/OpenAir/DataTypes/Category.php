@@ -24,4 +24,9 @@ class Category extends DataType
         'notes' => null, //Category notes.
         'picklist_label' => null, //Label as shown on form picklist.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Category %s %s", $this->id, $this->name);
+    }
 }

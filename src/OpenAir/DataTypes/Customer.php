@@ -61,4 +61,9 @@ class Customer extends DataType
         }
         parent::__construct();
     }
+
+    public function __toString()
+    {
+        return sprintf("Customer %s %s", $this->id, $this->name);
+    }
 }

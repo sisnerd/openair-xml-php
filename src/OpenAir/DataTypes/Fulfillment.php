@@ -22,4 +22,14 @@ class Fulfillment extends DataType
         'created' => null, //Time the record was created.
         'updated' => null, //Time the record was last updated or modified.
     ];
+
+    public function __toString()
+    {
+        return sprintf(
+            "Fulfillment %s $%s (created %s)",
+            $this->id,
+            $this->quantity,
+            date("Y-m-d H:i:s", $this->created)
+        );
+    }
 }

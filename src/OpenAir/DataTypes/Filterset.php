@@ -17,4 +17,9 @@ class Filterset extends DataType
         'created' => null, //Time the record was created.
         'updated' => null, //Time the record was last updated or modified.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Filterset %s %s", $this->id, $this->name);
+    }
 }

@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Repeat extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'frequency' => null, //The repeating interval of the event: D – daily, W –
@@ -18,4 +17,9 @@ class Repeat extends DataType
         'created' => null, //Time the record was created.
         'updated' => null, //Time the record was last updated or modified.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Repeat %s %s %s", $this->id, $this->every, $this->frequency);
+    }
 }

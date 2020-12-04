@@ -132,4 +132,9 @@ class User extends DataType
         }
         parent::__construct();
     }
+
+    public function __toString()
+    {
+        return sprintf("User %s %s <%s>", $this->id, $this->name, $this->addr->email);
+    }
 }

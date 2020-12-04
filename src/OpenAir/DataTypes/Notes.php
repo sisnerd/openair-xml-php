@@ -13,4 +13,9 @@ class Notes extends DataType
         'created' => null, //Time the record was created.
         'updated' => null, //Time the record was last modified.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Note %s", $this->name);
+    }
 }

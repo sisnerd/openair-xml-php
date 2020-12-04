@@ -35,4 +35,9 @@ class Issue extends DataType
         'submitted' => null, //Date the invoice was submitted.
         'approved' => null, //Date the invoice was approved.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Issue #%s %s, %s", $this->number, $this->name, $this->description);
+    }
 }

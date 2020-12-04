@@ -16,4 +16,9 @@ class Role extends DataType
         'external_id' => null, //If the record was imported from an external
         'updated' => null, //Time the record was last updated or modified.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Role %s %s", $this->id, $this->name);
+    }
 }

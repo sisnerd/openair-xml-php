@@ -15,4 +15,9 @@ class Preference extends DataType
         'userid' => null, //If the preference is for a user, this is the user ID.
         'setting' => null, //The preference data is stored in this field.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Preference %s %s %s", $this->id, $this->name, $this->setting);
+    }
 }

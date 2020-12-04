@@ -24,4 +24,9 @@ class Product extends DataType
         'notes' => null, //Notes associated with the product.
         'standard_cost' => null, //The current standard cost per unit of measure
     ];
+
+    public function __toString()
+    {
+        return sprintf("Product %s %s", $this->id, $this->name);
+    }
 }

@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Report extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -19,4 +18,9 @@ class Report extends DataType
         'email_report' => null, //A 1/0 field. 1 = report executes and sends an
         'relatedid' => null, //Related ID for attribute type. Report = ID of saved
     ];
+
+    public function __toString()
+    {
+        return sprintf("Report %s %s", $this->id, $this->name);
+    }
 }

@@ -19,4 +19,9 @@ class Timetype extends DataType
         'code' => null, //Optional accounting system code for integration with
         'picklist_label' => null, //Label as shown on form picklist.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Timetype %s %s", $this->id, $this->name);
+    }
 }

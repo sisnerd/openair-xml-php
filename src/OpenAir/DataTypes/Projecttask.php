@@ -63,4 +63,9 @@ class Projecttask extends DataType
         }
         parent::__construct();
     }
+
+    public function __toString()
+    {
+        return sprintf("Projecttask %s %s (project %s)", $this->id, $this->name, $this->projectid);
+    }
 }

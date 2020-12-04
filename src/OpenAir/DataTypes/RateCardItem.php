@@ -30,4 +30,9 @@ class RateCardItem extends DataType
         }
         parent::__construct();
     }
+
+    public function __toString()
+    {
+        return sprintf("RateCardItem %s $%s (rate card %s)", $this->id, $this->rate, $this->rate_card_id);
+    }
 }

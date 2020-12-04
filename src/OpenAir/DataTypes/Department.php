@@ -16,4 +16,9 @@ class Department extends DataType
         'externalid' => null, //If the record was imported from an external
         'picklist_label' => null, //Label as shown on form picklist.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Department %s %s", $this->id, $this->name);
+    }
 }

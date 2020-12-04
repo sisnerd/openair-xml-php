@@ -19,4 +19,9 @@ class Jobcode extends DataType
         'code' => null, //Optional accounting system code for integration with
         'active' => null, //A 1/0 field indicating if this is an active job code.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Jobcode %s %s", $this->id, $this->name);
+    }
 }

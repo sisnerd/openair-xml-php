@@ -28,4 +28,9 @@ class Item extends DataType
         'cost_is_fixed' => null, //A 1/0 field indicating whether the user is
         'picklist_label' => null, //Label as shown on form picklist.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Item %s %s", $this->id, $this->name);
+    }
 }

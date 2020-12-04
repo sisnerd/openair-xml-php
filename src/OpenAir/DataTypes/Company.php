@@ -23,4 +23,9 @@ class Company extends DataType
         'workscheduleid' => null, //The ID of the associated primary account
         'flags' => null, //Company-specific flags.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Company %s %s", $this->id, $this->company);
+    }
 }

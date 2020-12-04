@@ -14,4 +14,9 @@ class Ratecard extends DataType
         'name' => null, //The name of the rate card.
         'updated' => null, //Time the record was last updated or modified.
     ];
+
+    public function __toString()
+    {
+        return sprintf("Ratecard %s %s", $this->id, $this->name);
+    }
 }
