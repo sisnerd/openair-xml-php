@@ -67,6 +67,16 @@ class Command extends OpenAir
         return $this->responseCode;
     }
 
+    /**
+     * Implement this in child class as needed
+     *
+     * @return string
+     */
+    public function getResponseStatusMessage()
+    {
+        return '';
+    }
+
     public function isSuccess()
     {
         return $this->getResponseStatus() == self::STATUS_SUCCESS;

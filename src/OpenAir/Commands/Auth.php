@@ -55,4 +55,15 @@ class Auth extends Command
 
         return $authCommandObj;
     }
+
+    public function getResponseStatusMessage()
+    {
+        $code = (string)$this->responseCode;
+
+        if (isset(self::$response[$code])) {
+            return self::$response[$code];
+        }
+
+        return 'Unknown';
+    }
 }
