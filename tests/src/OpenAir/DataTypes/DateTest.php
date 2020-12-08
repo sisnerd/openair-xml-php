@@ -21,6 +21,14 @@ final class DateTest extends TestCase
         $this->assertEquals($datetime, $item->toDateTime());
     }
 
+    public function testConstructDateWithSingleHourMinSec()
+    {
+        $item = new Date(2, 4, 6, 12, 2, 2020);
+
+        $datetime = \DateTime::createFromFormat("Y-m-d H:i:s", '2020-12-02 02:04:06');
+        $this->assertEquals($datetime, $item->toDateTime());
+    }
+
     public function testToString()
     {
         $item = new Date(14, 25, 13, 12, 2, 2020);

@@ -28,8 +28,12 @@ class Date extends DataType
 
     public function toDateTime()
     {
-        $strDateTime = $this->year . "-" . $this->month . "-" . $this->day . " "
-            . $this->hour . ":" . $this->minute . ":" . $this->second;
+        $strDateTime = $this->year
+            . "-" . sprintf("%02d", $this->month)
+            . "-" . sprintf("%02d", $this->day)
+            . " " . sprintf("%02d", $this->hour)
+            . ":" . sprintf("%02d", $this->minute)
+            . ":" . sprintf("%02d", $this->second);
 
         return \DateTime::createFromFormat("Y-m-d H:i:s", $strDateTime);
     }
