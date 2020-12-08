@@ -25,4 +25,17 @@ class Date extends DataType
         }
         parent::__construct();
     }
+
+    public function toDateTime()
+    {
+        $strDateTime = $this->year . "-" . $this->month . "-" . $this->day . " "
+            . $this->hour . ":" . $this->minute . ":" . $this->second;
+
+        return \DateTime::createFromFormat("Y-m-d H:i:s", $strDateTime);
+    }
+
+    public function __toString()
+    {
+        return $this->toDateTime()->format("Y-m-d H:i:s");
+    }
 }

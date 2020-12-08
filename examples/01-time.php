@@ -20,3 +20,9 @@ $request->addCommand(new Time());
 
 // Execute the request, and an \OpenAir\Response will return
 $response = $request->execute();
+
+$data = $response->getCommandResponse('Time');
+
+$time = $data[0]->getResponseData()[0];
+
+echo "Current server time is: " . $time . "\n";
