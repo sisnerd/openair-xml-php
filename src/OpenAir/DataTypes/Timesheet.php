@@ -6,7 +6,6 @@ use OpenAir\Base\DataType;
 
 class Timesheet extends DataType
 {
-
     protected $data = [
         'id' => null, //Unique ID. Automatically assigned by the system.
         'created' => null, //Time the record was created.
@@ -36,4 +35,9 @@ class Timesheet extends DataType
         'errors' => null, //Holds errors from submission attempts.
         'sundial_contractor_id__c' => null
     ];
+
+    public function __toString()
+    {
+        return sprintf("Timesheet %s (for user %s) %s to %s", $this->id, $this->userid, $this->starts, $this->ends);
+    }
 }
