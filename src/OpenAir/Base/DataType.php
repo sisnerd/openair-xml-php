@@ -79,4 +79,48 @@ class DataType extends OpenAir
 
         return $xmlDataType;
     }
+
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    public function toArray()
+    {
+        $data = $this->getData();
+        ksort($data);
+
+        $normalized = [];
+        foreach ($data as $key => $value) {
+            if (is_object($value)) {
+                $normalized[$key] = $value->toArray();
+            } elseif (is_array($value)) {
+                $values = [];
+                foreach ($value as $subKey => $subValue) {
+                    if (is_object($subValue)) {
+                        $values[$subKey] = $subValue->toArray();
+                    } else {
+                        $values[$subKey] = $subValue;
+                    }
+                }
+                $normalized[$key] = $values;
+            } else {
+                $normalized[$key] = $value;
+            }
+        }
+
+        return $normalized;
+    }
+
+    public function toJson($pretty = false)
+    {
+        $data = $this->toArray();
+
+        $flags = 0;
+        if ($pretty) {
+            $flags = JSON_PRETTY_PRINT;
+        }
+
+        return json_encode($data, $flags);
+    }
 }
