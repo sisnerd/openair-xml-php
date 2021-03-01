@@ -20,6 +20,6 @@ class LoadedCost extends DataType
         'project_taskid' => null, //The id if this loaded cost is associated with a
         'cost' => null, //The fully loaded hourly cost of the user.
         'start' => null, //Start date for the loaded cost for historical records.
-        'Ic_level' => null, //If multiple loaded costs are used, this holds the
+        'lc_level' => null, //If multiple loaded costs are used, this holds the
     ];
 }

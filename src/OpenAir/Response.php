@@ -3,6 +3,7 @@
 namespace OpenAir;
 
 use OpenAir\DataTypes\Address;
+use OpenAir\DataTypes\Date;
 use OpenAir\DataTypes\Flag;
 use OpenAir\DataTypes\Url;
 
@@ -50,7 +51,17 @@ class Response extends OpenAir
                             $objDataType->$key = (string) $objXmlVal;
                         } elseif (count($objXmlVal) == 1 && isset($objXmlVal->Date)) {
                             //mktime(hour, min, sec, month, day, year)
-                            $strDate = mktime(
+//                            $strDate = mktime(
+//                                (int)$objXmlVal->Date->hour,
+//                                (int)$objXmlVal->Date->minute,
+//                                (int)$objXmlVal->Date->second,
+//                                (int)$objXmlVal->Date->month,
+//                                (int)$objXmlVal->Date->day,
+//                                (int)$objXmlVal->Date->year
+//                            );
+//                            $objDataType->$key = $strDate;
+
+                            $objDataType->$key = new Date(
                                 (int)$objXmlVal->Date->hour,
                                 (int)$objXmlVal->Date->minute,
                                 (int)$objXmlVal->Date->second,
@@ -58,7 +69,6 @@ class Response extends OpenAir
                                 (int)$objXmlVal->Date->day,
                                 (int)$objXmlVal->Date->year
                             );
-                            $objDataType->$key = $strDate;
                         } elseif ($key == 'flags' || $key == 'permissions') {
                             $aryFlags = [];
                             foreach ($objXmlVal->Flag as $intKey => $objFlag) {

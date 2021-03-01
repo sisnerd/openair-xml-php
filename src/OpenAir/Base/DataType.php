@@ -123,4 +123,12 @@ class DataType extends OpenAir
 
         return json_encode($data, $flags);
     }
+
+    /**
+     * @return bool
+     */
+    public function isNew()
+    {
+        return empty($this->data['id']);
+    }
 }
